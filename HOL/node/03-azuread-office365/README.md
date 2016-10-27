@@ -8,7 +8,7 @@ City Power & Light is a sample application that allows citizens to to report "in
 * WebAPI is shared across the front ends and exposes the backend DocumentDB
 * DocumentDB is used as the data persistence layer 
 
-In this lab, you will continue enhancing the City Power & Light application by adding authentication for users powered by [Azure Active Direcotry](https://azure.microsoft.com/en-us/services/active-directory/).  Once authenticated, you may then query the [Microsoft Office Graph](https://graph.microsoft.io) to retrieve information pertinent to the aplication.
+In this lab, you will continue enhancing the City Power & Light application by adding authentication for users powered by [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/).  Once authenticated, you may then query the [Microsoft Office Graph](https://graph.microsoft.io) to retrieve information pertinent to the aplication.
 
 > This guide use [Visual Studio Code](https://code.visualstudio.com/) for editing, however please feel free to use your editor of choice.  If you are interested in using full Visual Studio + [Node.js Tools for Visual Studio Extension (NTVS)](https://www.visualstudio.com/vs/node-js/), please see [here](https://github.com/Microsoft/nodejstools/wiki/Projects#create-project-from-existing-files) for instructions on wrapping existing code into a VS Project.
 
@@ -72,8 +72,8 @@ AzureAD can handle authentication for web applications. First we will create a n
 
     ```json
     "AAD_RETURN_URL": "http://localhost:3000/auth/openid/return",
-    "AAD_CLIENT_ID": "2251bd08-10ff-4ca2-a6a2-ccbf2973c6b6",
-    "AAD_CLIENT_SECRET": "JjrKfgDyo5peQ4xJa786e8z"
+    "AAD_CLIENT_ID": "YOUR CLIENT ID",
+    "AAD_CLIENT_SECRET": "YOUR SHARED SECRET"
     ```
 1. We have two choices of libraries to handle authentication between our Node application and AzureAD. The first is the [Azure Active Directory Library for NodeJS](https://github.com/AzureAD/azure-activedirectory-library-for-nodejs) (ADAL), and the second leverages [Passport.js](http://passportjs.org/) with the [Azure Active Directory Passport.js Plugin](https://github.com/AzureAD/passport-azure-ad).  For this example, we will use the Passport plugin in a utility file.    
 
@@ -104,7 +104,7 @@ AzureAD can handle authentication for web applications. First we will create a n
         //   To support persistent login sessions, Passport needs to be able to
         //   serialize users into and deserialize users out of the session.  Typically,
         //   this will be as simple as storing the user ID when serializing, and finding
-        //   the user by ID when deserializing.
+        //   the user by ID when deserialize.
         passport.serializeUser(function (user, done) {
             done(null, user.email);
         });

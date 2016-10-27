@@ -2,13 +2,13 @@
 
 ## Overview
 
-City Power & Light is a sample application that allows citizens to to report "incidents" that have occured in their community.  It includes a landing screen, a dashboard, and a form for reporting new incidents with an optional photo.  The application is implemented with several components:
+City Power & Light is a sample application that allows citizens to to report "incidents" that have occurred in their community.  It includes a landing screen, a dashboard, and a form for reporting new incidents with an optional photo.  The application is implemented with several components:
 
 * Front end web application contains the user interface and business logic.  This component has been implemented three times in .NET, NodeJS, and Java.
 * WebAPI is shared across the front ends and exposes the backend DocumentDB
 * DocumentDB is used as the data persistence layer 
 
-In this lab, you will continue enhancing the City Power & Light application by adding authentication for users powered by [Azure Active Direcotry](https://azure.microsoft.com/en-us/services/active-directory/).  Once authenticated, you may then query the [Microsoft Office Graph](https://graph.microsoft.io) to retrieve information pertinent to the aplication.
+In this lab, you will continue enhancing the City Power & Light application by adding authentication for users powered by [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/).  Once authenticated, you may then query the [Microsoft Office Graph](https://graph.microsoft.io) to retrieve information pertinent to the application.
 
 This guide uses [Eclipse](https://www.eclipse.org) for editing, however please feel free to use your editor of choice.
 
@@ -80,8 +80,8 @@ AzureAD can handle authentication for web applications. First we will create a n
 
     ```
     "AAD_RETURN_URL": "http://localhost:8080/auth/openid/return",
-    "AAD_CLIENT_ID": "2251bd08-10ff-4ca2-a6a2-ccbf2973c6b6",
-    "AAD_CLIENT_SECRET": "JjrKfgDyo5peQ4xJa786e8z"
+    "AAD_CLIENT_ID": "YOUR CLIENT ID HERE",
+    "AAD_CLIENT_SECRET": "YOUR SECRET HERE"
     ```
 
 1. To add AAD identity support libraries to your Spring application, open the build.gradle
@@ -95,7 +95,7 @@ AzureAD can handle authentication for web applications. First we will create a n
     ```
 
     To make sure that Eclipse knows about the new packages we added to
-    the buld, run the `ide/eclipse` gradle task in the `gradle tasks`
+    the build, run the `ide/eclipse` gradle task in the `gradle tasks`
     window. When that is done, right-click on the project in the project explorer,
     close the project, and then open it again.
 
@@ -108,9 +108,9 @@ with Spring security to allow flexible security requirements for pages in the ap
     First, open the file `devCamp.WebApp.AzureADAuthenticationFilter.java`, which has been commented 
     out. Remove the `/*` at the beginning and the `*/` at the end, so the code is no longer commented out. 
 
-    This is a Spring security fiter that will make sure the user is authenticated on pages
+    This is a Spring security filter that will make sure the user is authenticated on pages
     that require it.  If the user needs authentication, they will be redirected to the login
-    page to get the requred token.  
+    page to get the required token.  
     >Eclipse will complain that there are some missing types - don't worry, we will be adding them in subsequent steps.
 
 1. When the user completes their login, the browser will be redirected back to the same

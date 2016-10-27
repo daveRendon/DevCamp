@@ -35,6 +35,7 @@ This hands-on-lab has the following exercises:
 * Exercise 2: Add a caching layer
 * Exercise 3: Write images to Azure Blob storage
 
+---
 ### Exercise 1: Integrate the API
 
 1. Download or `git clone` the source files to your local machine
@@ -51,7 +52,7 @@ This hands-on-lab has the following exercises:
 
     ![image](./media/image-002.png)
 
-1. Let's run the application in Debug Mode.  Click the Debug icon on the left toolbar, then select the green "start" triangle.  In the Environment dropdown select **Node.js**.  VSCode then scaffolds out the files that it needs for debugging support in a launch.json file, stored at the root of your poject folder in a `.vscode` folder.  Click the green start triangle a second time to launch the application.
+1. Let's run the application in Debug Mode.  Click the Debug icon on the left toolbar, then select the green "start" triangle.  In the Environment dropdown select **Node.js**.  VSCode then scaffolds out the files that it needs for debugging support in a launch.json file, stored at the root of your project folder in a `.vscode` folder.  Click the green start triangle a second time to launch the application.
 
     ![image](./media/image-003.png) 
 
@@ -104,7 +105,7 @@ This hands-on-lab has the following exercises:
 
 1. Back in VSCode, let's begin integrating the API into our code.  We will need to query the API's endpoint URL, and we have options of where to store that string.  While we could insert it directly into our code, a better practice is to abstract such a configuration setting into an environment variable.  VSCode makes it straightforward to define variables at runtime in the debugging settings.
 
-    Stop the debugger by pressing the red "stop" square, and open the `.vscode/launch.json` file that was previously generated.  Under `configurations` look for the `env` node.  This section defines key/value pairs that will be passed into enviromment variables whenever the debugger is launched. Add an entry for `INCIDENT_API_URL` and set the value to the ASP.NET WebAPI that we earlier loaded into the browser. Do not add a trailing slash.
+    Stop the debugger by pressing the red "stop" square, and open the `.vscode/launch.json` file that was previously generated.  Under `configurations` look for the `env` node.  This section defines key/value pairs that will be passed into environment variables whenever the debugger is launched. Add an entry for `INCIDENT_API_URL` and set the value to the ASP.NET WebAPI that we earlier loaded into the browser. Do not add a trailing slash.
 
     ![image](./media/image-009.png)
 
@@ -162,7 +163,7 @@ This hands-on-lab has the following exercises:
 
     ![image](./media/image-014.png)
 
-    The breakpoint should be hit as the page loads.  Hover over the `body` parameter to examine the array of returned inicdents from the API.  This is the array that will be passed to the view for rendering. Next we need to update our view to accomodate the data.
+    The breakpoint should be hit as the page loads.  Hover over the `body` parameter to examine the array of returned incidents from the API.  This is the array that will be passed to the view for rendering. Next we need to update our view to accommodate the data.
 
 1. Open `views/dashboard.pug` and replace the template to include incident data:
 
@@ -204,7 +205,9 @@ This hands-on-lab has the following exercises:
 
 The cards now represent data returned from our API, replacing the static mockup code.
 
+---
 ### Exercise 2: Add a caching layer
+
 Querying our API is a big step forward, but querying a cache would increase performance and limit the load on our API.  Azure offers a managed (PaaS) service called [Azure Redis Cache](https://azure.microsoft.com/en-us/services/cache/).
 
 We deployed an instance of Azure Redis Cache in the ARM Template, but need to add application logic
@@ -317,6 +320,7 @@ We deployed an instance of Azure Redis Cache in the ARM Template, but need to ad
 
 All application requests for the dashboard will now first try to use Azure Redis Cache.  Under high traffic, this will improve page performance and decrease the API's scaling needs.   
 
+---
 ### Exercise 3: Write images to Azure Blob Storage
 
 When a new incident is reported, the user can attach a photo.  In this exercise we will process that image and upload it into an Azure Blob Storage Container.
@@ -334,7 +338,7 @@ When a new incident is reported, the user can attach a photo.  In this exercise 
     In VSCode, open `.vscode/launch.json` and add variables. 
     * `AZURE_STORAGE_ACCOUNT` is the name of the Azure Storage Account resource 
     * `AZURE_STORAGE_ACCESS_KEY` is **key1** from the Access Keys blade
-    * `AZURE_STORAGE_BLOB_CONTAINER` is the name of the container that will be used. Storage Accounts use containres to group sets of blobs together.  For this demo let's use `images` as the Container name
+    * `AZURE_STORAGE_BLOB_CONTAINER` is the name of the container that will be used. Storage Accounts use containers to group sets of blobs together.  For this demo let's use `images` as the Container name
     * `AZURE_STORAGE_QUEUE` is the name of the queue that will be used to store new messages
 
     ```json
@@ -342,11 +346,11 @@ When a new incident is reported, the user can attach a photo.  In this exercise 
         "NODE_ENV": "development",
         "INCIDENT_API_URL": "http://incidentapimm6lqhplzxjp2.azurewebsites.net",
         "REDISCACHE_HOSTNAME": "incidentcachemm6lqhplzxjp2.redis.cache.windows.net",
-        "REDISCACHE_PRIMARY_KEY": "bZcVx7XSRICO+RlKrh2eqvIAFMv0y3i5LQbk91LILSY=",
+        "REDISCACHE_PRIMARY_KEY": "YOUR CACHE KEY",
         "REDISCACHE_PORT": "6379",
         "REDISCACHE_SSLPORT": "6380",
-        "AZURE_STORAGE_ACCOUNT": "incidentblobstgmm6lqhplz",
-        "AZURE_STORAGE_ACCESS_KEY": "JP+YcOPBfI58bkmugEHPKKPaM5NLIrq18IBfUfC+0sCsX3V6pSV2a+GU34mD68OoMsiGf79Axu1lHf5pB98Zkw==",
+        "AZURE_STORAGE_ACCOUNT": "YOUR STORAGE ACCOUNT",
+        "AZURE_STORAGE_ACCESS_KEY": "YOUR STORAGE KEY",
         "AZURE_STORAGE_BLOB_CONTAINER": "images",
         "AZURE_STORAGE_QUEUE": "thumbnails",
     }
@@ -361,7 +365,7 @@ When a new incident is reported, the user can attach a photo.  In this exercise 
     var mime = require('mime');
     var azure = require('azure-storage');
 
-    // Instantiage Blob Storage services
+    // Instantiate Blob Storage services
     var blobService = azure.createBlobService();
     var queueService = azure.createQueueService();
     queueService.messageEncoder = new azure.QueueMessageEncoder.TextBase64QueueMessageEncoder();
@@ -562,6 +566,7 @@ When a new incident is reported, the user can attach a photo.  In this exercise 
 
     ![image](./media/image-022.png)
 
+---
 ## Summary
 Our application started as a prototype on our local machine, but now uses a variety of Azure services.  We started by consuming data from an API hosted in Azure, optimized that data call by introducing Azure Redis Cache, and enabled the uploading of image files to the affordable and redundant Azure Storage. 
 

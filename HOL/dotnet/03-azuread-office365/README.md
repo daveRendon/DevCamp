@@ -36,6 +36,7 @@ This hands-on-lab has the following exercises:
 * Exercise 2: Create a user profile page
 * Exercise 3: Send a confirmation email to the user on incident creation
 
+---
 ### Exercise 1: Register the application
 
 AzureAD can handle authentication for web applications. First we will create a new application in our AzureAD directory, and then we will extend our application code to work with an authentication flow. 
@@ -539,6 +540,7 @@ AzureAD can handle authentication for web applications. First we will create a n
 
 1. Click on the `Report Outage` button. The application now behaves differently for anonymous vs. authenticated users, allowing you the developer flexibility in exposing pieces of your application to anonymous audiences while ensuring sensitive content stays protected.
 
+---
 ### Exercise 2: Create a user profile page with Graph Data
 Next, we are going to create a page to display information about the logged in user.  While AzureAD returns a name and email address, we can query the Microsoft Graph for extended details about a given user.  We will query the Graph for user information.
 
@@ -781,7 +783,7 @@ Next, we are going to create a page to display information about the logged in u
 
     ![image](./media/image-021.png)
 
-
+---
 ### Exercise 3: Interact with the Microsoft Graph
 In the previous exercise you read data from the Microsoft Graph, but there are other endpoints can be used for more sophisticated tasks.  In this exercise we will use the Graph to send an email message whenever a new incident is reported.
 
@@ -984,6 +986,7 @@ In the previous exercise you read data from the Microsoft Graph, but there are o
 
 Sending this email did not require the setting up of a dedicated email server, but instead leveraged capabilities within the Microsoft Graph.  We could have also created a calendar event, or a task related to the incident for a given user, all via the API.
 
+---
 ## Summary
 Our application can now distinguish between anonymous and authenticated users to ensure flexibility between public and private data.  We are also able to leverage the Microsoft Graph to not only return the user's extended user profile, but to send email confirmations whenever a new incident is created.
 

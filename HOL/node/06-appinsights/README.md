@@ -21,9 +21,10 @@ This hands-on-lab has the following exercises:
 * Exercise 4: Create a global web test
 * Exercise 5: Interact with your telemetry data
 
+---
 ### Exercise 1: Create an Application Insights resource
 
-An instance of Application Insights can be created in a variety of ways, including ARM Templates or CLI commands.  For this execise we will use the Azure Portal to create and configure our instance.
+An instance of Application Insights can be created in a variety of ways, including ARM Templates or CLI commands.  For this exercise we will use the Azure Portal to create and configure our instance.
 
 1. In a browser, navigate to the [Azure Portal](https://portal.azure.com)
 
@@ -51,13 +52,14 @@ An instance of Application Insights can be created in a variety of ways, includi
 
 We now have an instance of Application Insights created and ready for data.  The Instrumentation Key is important, as it is the link that ties an application to the AI service. 
 
+---
 ### Exercise 2: Add server and client side SDK's 
 
 App Insights works with 2 components: 
 1. A server side SDK that integrates into the NodeJS processes
 2. A snippet of JavaScript sent down to the client's browser to monitor behavior
 
-We will add both components to our application and enable the sending of telementry into the AppInsights service.
+We will add both components to our application and enable the sending of telemetry into the AppInsights service.
 
 1. Open the application in VSCode. Feel free to use the folder you've been using throughout the hands on labs, or feel free to use the `start` folder. 
 
@@ -112,7 +114,7 @@ We will add both components to our application and enable the sending of telemen
     appInsightsHelper.setup(app);
     ``` 
 
-1. Run your application and in the navigate around several pages to generate sample telementry.  
+1. Run your application and in the navigate around several pages to generate sample telemetry.  
 
 1. Back in the Azure Portal, refresh the browser tab (or click **Refresh** from the top toolbar) until you see data appear.  
 
@@ -190,12 +192,13 @@ We will add both components to our application and enable the sending of telemen
 
     > In a real world scenario we may not wish to mix `.html` and `.pug` files in our views, however for a lab it can be difficult to copy/paste/troubleshoot pug snippets
 
-1. Redeploy the application and load several pages to generate more sample telementry. The Azure Portal should now light up data for **Page View Load Time** 
+1. Redeploy the application and load several pages to generate more sample telemetry. The Azure Portal should now light up data for **Page View Load Time** 
 
     ![image](./media/image-009.png)
 
-Our application is now providing the Application Insights service telementry data from both the server and client.
+Our application is now providing the Application Insights service telemetry data from both the server and client.
 
+---
 ### Exercise 3: Monitor custom events
 
 Up until this point the telemetry provided has been an automatic, out-of-the-box experience.  For custom events we need to use the SDK. Let's create an event where any time a user views their Profile page, we record their name and AzureAD tenant ID.
@@ -243,7 +246,7 @@ Up until this point the telemetry provided has been an automatic, out-of-the-box
     module.exports = router;
     ```
 
-1. Save the file, restart the application, and generate sample telemetry by visitng the profile page, leaving, and returning to the profile page.  In the Azure Portal we can see the data in the **Usage** pane from the left navigation.
+1. Save the file, restart the application, and generate sample telemetry by visiting the profile page, leaving, and returning to the profile page.  In the Azure Portal we can see the data in the **Usage** pane from the left navigation.
 
     ![image](./media/image-010.png) 
 
@@ -251,11 +254,7 @@ Up until this point the telemetry provided has been an automatic, out-of-the-box
 
     ![image](./media/image-011.png)
 
-These custom events (and the related concept of constom metrics) are a powerful way to integrate telemetry into our application and centralize monitoring across multiple application instances.
-
-### Exercise 4: Create a global web test
-
-### Exercise 5: Interact with your telemetry data
+These custom events (and the related concept of custom metrics) are a powerful way to integrate telemetry into our application and centralize monitoring across multiple application instances.
 
 ## Summary
 

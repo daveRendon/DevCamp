@@ -62,7 +62,7 @@ VSTS gives us the option to use Git or [TFVC](https://www.visualstudio.com/en-us
 You have now created a project in VSTS with a Git repository, and cloned the repository locally to your developer machine.  Next we'll upload code from our machine to VSTS.
 
 ----
-## Exercise 3: Add application to VSTS Git ##
+### Exercise 3: Add application to VSTS Git ##
 
 1. Click **Code** on the top toolbar to navigate to the Code screen.  Then click the **Clone in Visual Studio** button.
 
@@ -132,7 +132,7 @@ You have now created a project in VSTS with a Git repository, and cloned the rep
      ![image](./media/image-054.png)
 
 ----
-## Exercise 4: Create Continuous Integration pipeline ##
+### Exercise 4: Create Continuous Integration pipeline ##
 
 With application code now uploaded to VSTS, we can begin to create builds via a Build Definition.  Navigate to the **Build** tab from he top navigation.  We will use the hosted agent within VSTS to process our builds in this exercise.
 
@@ -270,6 +270,7 @@ After a successful build you should see the application deployed to your web app
 
 ![image](./media/image-066.png)
 
+---
 ## Summary
 
 In this hands-on lab, you learned how to:

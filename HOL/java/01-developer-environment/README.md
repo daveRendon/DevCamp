@@ -107,7 +107,8 @@ to open the Azure portal, which will look like this:
 
     ![image](./media/2016-10-14_18-00-54.png)
 
-### Exersize 3: Start your VSTS trial subscription
+---
+### Exercise 3: Start your VSTS trial subscription
 
 1. In your browser, go to `http://www.visualstudio.com/team-services`, and click on `sign in` in the upper right corner.  This should take you to a screen that looks like this:
 
@@ -135,7 +136,7 @@ these resources in your Azure subscription, do `control-click` on this button:
 
     Name your resource group `DevCamp`, choose a location for your deployment, check the box that indicates you agree to the terms and conditions, and click the `Purchase` button.
 
-    The Resource Group template will start deploying, and the portal will pin a tile to the dashbord showing the status:
+    The Resource Group template will start deploying, and the portal will pin a tile to the dashboard showing the status:
 
     ![image](./media/2016-10-18_13-19-01.png)
 
@@ -321,7 +322,7 @@ and click on the `Other Downloads` link under v6.9.0:
 
     ![image](./media/2016-10-19_11-28-28.png)
 
-    Also, install the spring tool suite package by using the menu item `Help/Eclipse Marketplace...`, type `sping` in the Find: box and choose `Go`.
+    Also, install the spring tool suite package by using the menu item `Help/Eclipse Marketplace...`, type `spring` in the Find: box and choose `Go`.
     in the list of packages, scroll down to `Spring Tool Suite (STS) for Eclipse 3.8.2.RELEASE` and click `Install`.
 
     ![image](./media/2016-10-24_14-29-53.png)
@@ -329,7 +330,7 @@ and click on the `Other Downloads` link under v6.9.0:
 ---
 ### Exercise 7: Azure Portal walkthrough
 
-1. On your local machine or the virtual machine in Azure, open a browser window and go to the main Azure portal page, http://portal.azure.com.  Log in with the credentials you supplied in the subscription signup exersize.  You should see the Azure portal, similar to this:
+1. On your local machine or the virtual machine in Azure, open a browser window and go to the main Azure portal page, http://portal.azure.com.  Log in with the credentials you supplied in the subscription signup exercise.  You should see the Azure portal, similar to this:
 
     ![image](./media/2016-10-19_15-08-26.png)
 
@@ -388,7 +389,7 @@ and click on the `Other Downloads` link under v6.9.0:
 
     ![image](./media/2016-10-19_16-25-54.png)
 
-    If you click on your name, you can sign oudt, change your password, view your permissions, and view your bill:
+    If you click on your name, you can sign out, change your password, view your permissions, and view your bill:
 
     ![image](./media/2016-10-19_16-28-33.png)
 

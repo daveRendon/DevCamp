@@ -21,6 +21,7 @@ This hands-on-lab has the following exercises:
 * Exercise 3: Add application to VSTS Git
 * Exercise 4: Create a Continuous Integration pipeline
 
+---
 ### Exercise 1: Create VSTS online account
 
 1. In your browser, browser to `https://www.visualstudio.com/team-services/`
@@ -29,6 +30,7 @@ This hands-on-lab has the following exercises:
 
 1. Click "sign in" and log in with your account
 
+---
 ### Exercise 2: Create VSTS Git repository
 
 VSTS gives us the option to use Git or 
@@ -71,6 +73,7 @@ repositories
 
 You have now created a project in VSTS with a Git repository, and cloned the repository locally to your developer machine.  Next we'll upload code from our machine to VSTS.
 
+---
 ### Exercise 3: Add application to VSTS Git
 
 1. When we cloned our repository it was empty.  Take the code that you have developed in the earlier labs (or the `start` folder bundled with this readme) and paste it into our new directory.  This can be done via the command line, or with good old copy/paste in an Explorer or Finder window.
@@ -98,6 +101,7 @@ components are typically not added to source control, as they bloat the
 size of the repository.  These files should have been excluded from your 
 respository due to settings in the `.gitignore` file
 
+---
 ### Exercise 4: Create Continuous Integration pipeline
 
 With application code now uploaded to VSTS, we can begin to create builds via a 
@@ -223,6 +227,7 @@ artifact will be deployed to an Azure Web App in a later lab.
 
     ![image](./media/image-028.png)
 
+---
 ### Exercise 5: Deploy code to an Azure Web App
 
 In the ARM Template that was originally deployed, a web app was created as a development 
@@ -331,13 +336,13 @@ to open a new browser tab holding configuration options.
 
     ![image](./media/image-041.png)
 
-    The modal window should automatically determinine your subscription information. 
+    The modal window should automatically determine your subscription information. 
     Provide a name such as **Azure**, select **OK**, and a close the browser tab.
 
     ![image](./media/image-042.png)
 
     If your subscription is not in the dropdown list, click the link at the bottom of the window, and the window 
-    format will chage to allow you to enter connection information on your subscription:    
+    format will change to allow you to enter connection information on your subscription:    
 
     ![image](./media/image-043.png)
 
@@ -372,7 +377,7 @@ to open a new browser tab holding configuration options.
 
     ![image](./media/image-047.png)
 
-    Click **Verifiy connection*, and ensure that the window indicates that the connection was verified. 
+    Click **Verify connection*, and ensure that the window indicates that the connection was verified. 
     Then Click **OK** and **Close**.
 
     ![image](./media/image-048.png)

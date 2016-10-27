@@ -107,7 +107,8 @@ to open the Azure portal, which will look like this:
 
     ![image](./media/2016-10-14_18-00-54.png)
 
-### Exersize 3: Start your VSTS trial subscription
+---
+### Exercise 3: Start your VSTS trial subscription
 
 1. In your browser, go to `http://www.visualstudio.com/team-services`, and click on `sign in` in the upper right corner.  This should take you to a screen that looks like this:
 
@@ -416,6 +417,7 @@ and click on the `Other Downloads` link under v6.9.0:
 
 > it is particularly useful to create resources in the Azure portal, then save or edit the resource group template.  Resource group templates will be explained further in a later lab.
 
+---
 ### Exercise 8: View the resources you created
 
 Going back to the list of resources in the resource group, we'll go through the list of each resource, with a description.  Feel free to click on the resource and view its detail blade.

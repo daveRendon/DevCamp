@@ -2,7 +2,7 @@
 
 ## Overview
 
-City Power & Light is a sample application that allows citizens to to report "incidents" that have occured in their community.  It includes a landing screen, a dashboard, and a form for reporting new incidents with an optional photo.  The application is implemented with several components:
+City Power & Light is a sample application that allows citizens to to report "incidents" that have occurred in their community.  It includes a landing screen, a dashboard, and a form for reporting new incidents with an optional photo.  The application is implemented with several components:
 
 * Front end web application contains the user interface and business logic.  This component has been implemented three times in .NET, NodeJS, and Java.
 * WebAPI is shared across the front ends and exposes the backend DocumentDB
@@ -36,7 +36,8 @@ This hands-on-lab has the following exercises:
 * Exercise 2: Add a caching layer
 * Exercise 3: Write images to Azure Blob storage
 
-## Exercise 1: Integrate the API
+---
+### Exercise 1: Integrate the API
 
 1. In your development virtual machine, open a command prompt window and navigate to the `c:\DevCamp\HOL\java\02-modern-cloud-apps\start` folder 
 1. Run `gradle eclipse` in the terminal window to restore all dependencies and configure the
@@ -133,7 +134,7 @@ This hands-on-lab has the following exercises:
     Stop the debugger by pressing the red "stop" square, and open the
     run configuration you created earlier.  Click the "Environment"
     tab.  This section defines key/value pairs that will be passed
-    into enviromment variables whenever the debugger is launched. Add
+    into environment variables whenever the debugger is launched. Add
     an entry for `INCIDENT_API_URL` and set the value to the ASP.NET
     WebAPI that we earlier loaded into the browser (and captured in
     notepad). It should look like this: `http://incidentapib6prykosg3fjk.azurewebsites.net/`, but with your own website name.  Click OK to save the
@@ -358,6 +359,7 @@ Scroll to the Create function of `devCamp.WebApp.Controllers.IncidentController.
 
 The cards now represent data returned from our API, replacing the static mockup code.  You can also click on `Report Outage`, enter the information requested, then come back to the dashboard display to verify that your outage was saved.
 
+---
 ## Exercise 2: Add a caching layer
 Querying our API is a big step forward, but caching the data in memory would increase 
 performance and reduce the load on our API.  Azure offers a managed (PaaS) 
@@ -632,7 +634,8 @@ If you refresh your page in the browser, you should not get another log message,
 
 > if you refresh or click `Dashboard` before the previous request has completed, you may get two log messages indicating the web service has been called.  This is expected behavior, since the write to cache will happen when the request has completed.
 
-## Exercise 3: Write images to Azure Blob Storage
+---
+### Exercise 3: Write images to Azure Blob Storage
 
 When a new incident is reported, the user can attach a photo.  In this exercise we will process that image and upload it into an Azure Blob Storage Container.
 
@@ -653,7 +656,7 @@ When a new incident is reported, the user can attach a photo.  In this exercise 
     and add the following environment variables:
     * `AZURE_STORAGE_ACCOUNT` is the name of the Azure Storage Account resource
     * `AZURE_STORAGE_ACCESS_KEY` is **key1** from the Access Keys blade
-    * `AZURE_STORAGE_BLOB_CONTAINER` is the name of the container that will be used. Storage Accounts use containres to group 
+    * `AZURE_STORAGE_BLOB_CONTAINER` is the name of the container that will be used. Storage Accounts use containers to group 
     sets of blobs together.  For this demo let's use `images` as the Container name
     * `AZURE_STORAGE_QUEUE` is the name of the Azure Storage Queue resource.  For this demo we will use `thumbnails`.
 

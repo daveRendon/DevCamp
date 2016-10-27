@@ -33,7 +33,8 @@ This hands-on-lab has the following exercises:
 * Exercise 1: Setup authentication 
 * Exercise 2: Create a user profile page
 
-## Exercise 1: Integrate the API
+---
+### Exercise 1: Integrate the API
 
 AzureAD can handle authentication for web applications. First we will create a new application in our AzureAD directory, and then we will extend our application code to work with an authentication flow. 
 
@@ -171,7 +172,8 @@ named  `devCamp.WebApp.Utils.AuthHelper.java`, which has been commented
 
     The application now behaves differently for anonymous vs. authenticated users, allowing you the developer flexibility in exposing pieces of your application to anonymous audiences while ensuring sensitive content stays protected.
 
-## Exercise 2: Create a user profile page
+---
+### Exercise 2: Create a user profile page
 Next, we are going to create a page to display information about the logged in user.  While AzureAD returns a name and email address when the user logs in, we can query the Microsoft Graph for extended details about a given user.  We will add a view, a controller, and then query the Graph for user information.
 
 1. Create a new file named `templates/Profile/index.html`. Rendered with a set of attributes, we will display a simple table where each row corresponds to an attribute.

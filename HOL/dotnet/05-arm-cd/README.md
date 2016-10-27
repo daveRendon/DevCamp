@@ -20,6 +20,7 @@ This hands-on-lab has the following exercises:
 * Exercise 3: Integrate new Web App into VSTS
 * Exercise 4: Deploy City Power & Light to new Web App
 
+---
 ### Exercise 1: Create an ARM Template in Visual Studio Code
 
 Visual Studio Code includes a sizable ecosystem of extensions.  One such extension is the [Azure Resource Manager Tools](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools).
@@ -128,6 +129,7 @@ Visual Studio Code includes a sizable ecosystem of extensions.  One such extensi
 
 We are now ready to deploy our ARM Template containing an App Service Plan, and a Web App with environment variables to Azure. 
 
+---
 ### Exercise 2: Deploy ARM Template to Azure via the XPlat CLI
 
 For deploying the ARM Template we will use the Azure Xplat CLI.  Please Ensure you have [installed](https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/#option-1-install-an-npm-package) the Azure XPlat CLI package from NPM before proceeding.
@@ -159,6 +161,7 @@ For deploying the ARM Template we will use the Azure Xplat CLI.  Please Ensure y
 
 The new resource group is now holding our "Test" environment web app and has been added to our app registration.
 
+---
 ### Exercise 3: Integrate new Web App into VSTS
 
 Back in VSTS, open the **Release Definition** that we started in a previous lab.  You should be be able to find this by navigating to **Releases** on the top navigation. We need to create a second environment to serve as our test web app.
@@ -169,7 +172,7 @@ Back in VSTS, open the **Release Definition** that we started in a previous lab.
 
     ![image](./media/image-014.png)
 
-1. VSTS allows us to control and govern how releases happen between environments.  Instead of automatically deploying our test environment after our dev environment, let's add an approval step.  A user can look at the dev environment, confirm it is is ready, and then authorize a release to the test envrionment. 
+1. VSTS allows us to control and govern how releases happen between environments.  Instead of automatically deploying our test environment after our dev environment, let's add an approval step.  A user can look at the dev environment, confirm it is is ready, and then authorize a release to the test environment. 
 
     For the **Pre-deployment approval** option, select **Specific users** and enter your account name. Then click the **Create** button
 
@@ -181,6 +184,7 @@ Back in VSTS, open the **Release Definition** that we started in a previous lab.
 
 1. Save your Release Definition to finish adding the additional environment.
 
+---
 ### Exercise 4: Deploy City Power & Light to new Web App
 
 With the updated Release Definition, we can now execute a release.

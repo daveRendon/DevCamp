@@ -22,6 +22,7 @@ This hands-on-lab has the following exercises:
 * Exercise 4: Create a Continuous Integration pipeline
 * Exercise 5: Deploy code to an Azure Web App
 
+---
 ### Exercise 1: Create VSTS online account
 
 1. In your browser, browser to `https://www.visualstudio.com/team-services/`
@@ -30,6 +31,7 @@ This hands-on-lab has the following exercises:
 
 1. Log in with your account 
 
+---
 ### Exercise 2: Create VSTS Git repository
 
 VSTS gives us the option to use Git or [TFVC](https://www.visualstudio.com/en-us/docs/tfvc/overview) as our project's repository.  For this exercise we will use Git, and then clone the repository to our dev machine. 
@@ -66,13 +68,14 @@ VSTS gives us the option to use Git or [TFVC](https://www.visualstudio.com/en-us
 
 You have now created a project in VSTS with a Git repository, and cloned the repository locally to your developer machine.  Next we'll upload code from our machine to VSTS.
 
+---
 ### Exercise 3: Add application to VSTS Git
 
 1. When we cloned our repository it was empty.  Take the code that you have developed in the earlier labs (or the `start` folder bundled with this readme) and paste it into our new directory.  This can be done via the command line, or with good old copy/paste in an Explorer or Finder window.
 
     ![image](./media/image-007.png)
 
-    > Depending on how your environment is setup, there may be a hidden folder `.git` in your orignating directory. Do not copy this folder into the destination directory linked to VSTS
+    > Depending on how your environment is setup, there may be a hidden folder `.git` in your originating directory. Do not copy this folder into the destination directory linked to VSTS
 
 1. Back in the console, execute a `git status` to ensure the files are picked up by git.
 
@@ -88,8 +91,9 @@ You have now created a project in VSTS with a Git repository, and cloned the rep
 
 1. Now, any changes you make to the local repository can be pushed up to VSTS.  Other team members may also begin interacting with the code base via their own clones and pushes.
 
-> Note that we did not include the `node_modules` or `.vscode` folders. These components are typically not added to source control, as they bloat the size of the repository.  These files should have been excluded from your respository due to settings in the `.gitignore` file
+> Note that we did not include the `node_modules` or `.vscode` folders. These components are typically not added to source control, as they bloat the size of the repository.  These files should have been excluded from your repository due to settings in the `.gitignore` file
 
+---
 ### Exercise 4: Create Continuous Integration pipeline
 
 With application code now uploaded to VSTS, we can begin to create builds via a Build Definition.  Navigate to the **Build** tab from he top navigation.  We will use the hosted agent within VSTS to process our builds in this exercise.
@@ -104,7 +108,7 @@ With application code now uploaded to VSTS, we can begin to create builds via a 
 
 1. Confirm the Repository Source is set to your VSTS Project, that the repository is set the repo that was earlier created, and that the Agent Queue is set to **Hosted**.  
 
-    Check the box next to **Contiuous Integration** to automatically run this build anytime code is checked into the repository.
+    Check the box next to **Continuous Integration** to automatically run this build anytime code is checked into the repository.
 
     ![image](./media/image-013.png)
 
@@ -193,6 +197,7 @@ With application code now uploaded to VSTS, we can begin to create builds via a 
 
 We now have a Build Definition that will construct our NodeJS application and package it for deployment anytime code is checked into the repository, or a manual build is queued. 
 
+---
 ### Exercise 5: Deploy code to an Azure Web App
 
 In the ARM Template that was originally deployed in the lab setup, a web app was created as a development environment to hold a NodeJS application. We will use this web app as a deployment target from VSTS. First, we need to prepare this web app for our application code and then create a Release Definition.
@@ -229,9 +234,9 @@ In the ARM Template that was originally deployed in the lab setup, a web app was
 
     * **AAD_RETURN_URL** should be set to the same URL that we just configured for our AzureAD application. Should be similar to `https://nodejsappmm6lqhplzxjp2.azurewebsites.net/auth/openid/return`. Ensure this is using **https**.
 
-    * **AAD_CLIENT_ID** should match launch.json and similar to `2251bd08-10ff-4ca2-a6a2-ccbf2973c6b6`
+    * **AAD_CLIENT_ID** should match launch.json and similar to `YOUR CLIENT ID`
 
-    * **AAD_CLIENT_SECRET** should match launch.json and be similar to `JjrKfgDyo5peQ4xJa786e8z`
+    * **AAD_CLIENT_SECRET** should match launch.json and be similar to `YOUR SHARED SECRET`
 
     ![image](./media/image-035.png)
 

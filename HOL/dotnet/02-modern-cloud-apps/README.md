@@ -347,7 +347,7 @@ This hands-on-lab has the following exercises:
 ![image](./media/image-15.png)
 
 ---
-## Exercise 2: Add a caching layer
+### Exercise 2: Add a caching layer
 Querying our API is a big step forward, but querying a cache would increase performance and limit the load on our API.  Azure offers a managed (PaaS) service called [Azure Redis Cache](https://azure.microsoft.com/en-us/services/cache/).
 
 We deployed an instance of Azure Redis Cache in the ARM Template, but need to add application logic
@@ -505,7 +505,7 @@ On the Redis blade, expand **Ports* and note the Non-SSL port 6379 and SSL Port 
 1. Close the browser and stop debugging
 
 ---
-## Exercise 3: Write images to Azure Blob Storage
+### Exercise 3: Write images to Azure Blob Storage
 
 When a new incident is reported, the user can attach a photo.  In this exercise we will process that image and upload it into an Azure Blob Storage Container.
 
@@ -660,8 +660,7 @@ When a new incident is reported, the user can attach a photo.  In this exercise 
 1. Add a new incident with a picture and it will get uploaded to Azure storage.
 1. Close the browser and stop debugging.
 
-END
-
+---
 ## Summary
 
 In this hands-on lab, you learned how to:

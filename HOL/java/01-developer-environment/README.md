@@ -7,7 +7,7 @@ In this lab, you will set up an Office365 trial subscription, an Azure trial sub
 a virtual machine in the subscription to use for development of further labs.
 
 ## Objectives
-In this hands-on lab, you will set up an Office365 developer subscription, and Azure trial subscription, and an Azure-based virutal machine for the development environment for subsequent labs in the DevCamp.  To expedite the process, we've prepared Windows and Linux images that you will copy into your own environment, start the virtual machine and connect to it.  You will then configure the components for Azure development.
+In this hands-on lab, you will set up an Office365 developer subscription, and Azure trial subscription, and an Azure-based virtual machine for the development environment for subsequent labs in the DevCamp.  To expedite the process, we've prepared Windows and Linux images that you will copy into your own environment, start the virtual machine and connect to it.  You will then configure the components for Azure development.
 * Set up an Office365 trial subscription
 * Set up an Azure trial subscription
 * Configure your Azure subscription for DevCamp
@@ -29,8 +29,9 @@ This hands-on-lab has the following exercises:
 * Exercise 5: Create an Azure Virtual Machine for development
 * Exercise 6: Connect to the Azure Virtual Machine and configure it for development
 * Exercise 7: Azure Portal walkthrough
-* Exersize 8: View the resources you created
+* Exercise 8: View the resources you created
 
+---
 ### Exercise 1: Set up Office 365 trial subscription
 
 1. In your browser, go to `https://products.office.com/en-us/business/office-365-enterprise-e3-business-software` 
@@ -51,23 +52,25 @@ and click the link that says "Free Trial", which will take you to this page:
     ![image](./media/2016-10-14_19-07-30.png)
 
 1. After this process is complete, your O365 trial will be set up, and you'll see this page:
+    
     ![image](./media/2016-10-18_12-39-13.png)
 
     Make note of your user id, which will be used to sign onto the Azure portal later.
     Click `You're ready to go`, which will take you to the following screen:
+
     ![image](./media/2016-10-18_12-42-47.png)
 
     Click on the `admin` app icon, which will open the Office365 admin center page
-    in your broser.  It will look like this:
+    in your browser.  It will look like this:
 
     ![image](./media/2016-10-14_18-38-17.png)
 
      If you'd like to see the welcome tour click `Next`, 
     or simply close the dialog box.   
     
-    >Stay on this page until the next exercise.
+> Stay on this page until the next exercise.
 
-
+---
 ### Exercise 2: Set up Azure trial subscription
 
 1.  Next, we want to set up an Azure subscription, which
@@ -79,6 +82,7 @@ and click the link that says "Free Trial", which will take you to this page:
 
 1. Click on `Azure subscription`, that will take you to the page for creating a new 
     trial subscription:
+
     ![image](./media/2016-10-18_12-48-52.png)
 
     Enter the requested information and click `next`.
@@ -115,14 +119,15 @@ to open the Azure portal, which will look like this:
 
     Click Accept to access your Visual Studio Dev Essentials benefits.
 
+---
 ### Exercise 4: Configure your Azure subscription for DevCamp
 
 1. We have created an Azure Resource Group template that will configure the resources you need in Azure for the DevCamp.  To deploy 
 these resources in your Azure subscription, do `control-click` on this button:
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzureCAT-GSI%2FDevCamp%2Fmaster%2FShared%2FARMTemplate%2FAzureDeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
-</a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzureCAT-GSI%2FDevCamp%2Fmaster%2FShared%2FARMTemplate%2FAzureDeploy.json" target="_blank">
+        <img src="http://azuredeploy.net/deploybutton.png"/>
+    </a>
 
 1. You should see a new tab open in your browser and open the Azure portal, with a blade that looks like this:
 
@@ -140,8 +145,8 @@ these resources in your Azure subscription, do `control-click` on this button:
     resource group.  When you apply the resource group template, Azure will apply the template to your Azure resource group, and create 
     the resources you have specified in the template.  This makes it easy to maintain the infrastructure definition in the JSON text file.
     
-    In the resource group tempate we have created for DevCamp, there are several types of resources including Web Apps and Virtual Machines.  The 
-    whole list of resources deployed is detailed in Exersize 8 of this Hands-On-Lab.  Resource Group Templates are usually fairly quick to
+    In the resource group template we have created for DevCamp, there are several types of resources including Web Apps and Virtual Machines.  The 
+    whole list of resources deployed is detailed in Exercise 8 of this Hands-On-Lab.  Resource Group Templates are usually fairly quick to
     apply - the reason this one takes so long is that we are creating a Windows Virtual machine and installing all the tools you will
     need for the DevCamp.
 
@@ -153,6 +158,7 @@ these resources in your Azure subscription, do `control-click` on this button:
 
     ![image](./media/2016-10-18_13-39-10.png)
 
+---
 ### Exercise 5: Create an Azure Virtual Machine for development
 
 1. The Azure resource group template will have created two virtual machines - one for 
@@ -164,8 +170,7 @@ or to stop or delete it.
 
     ![image](./media/2016-10-18_15-32-30.png)
 
-
-
+---
 ### Exercise 6 Connect to the Azure Virtual Machine and configure it for development
 
 1. click the virtual machine, and then click `Connect` to connect to the machine using 
@@ -174,14 +179,14 @@ Remote Desktop:
     ![image](./media/2016-10-18_16-37-57.png)
 
     This will download a remote desktop connection file, and when you open it, remote desktop 
-    on your local machine will attempt to attach to your virtual machine.   When the windows security dialog pops up, click on the `more choices link, then choose `use a different account`
+    on your local machine will attempt to attach to your virtual machine.   When the windows security dialog pops up, click on the `more choices link`, then choose `use a different account`
     
     ![image](./media/2016-10-19_14-42-16.png)
 
-    Use the credentials l-admin with password Devc@mp2016! to log onto the machine.  It
+    Use the credentials `l-admin` with password `Devc@mp2016!` to log on to the machine.  It
     would be wise to change the password in the virtual machine.
 
-    When remote desktop is connected, you will see server manager initally.  We will
+    When remote desktop is connected, you will see server manager initially.  We will
     want to turn of IE enhanced security, to make accessing the web within the virtual machine easier.  First click local server;
 
     ![image](./media/2016-10-18_16-46-33.png)
@@ -214,7 +219,7 @@ Remote Desktop:
 
 1. We are now going to deploy our .NET API to an Azure App Service.  In the command window change the directory too the root with `cd \`, and clone the github repository for the API with `git clone https://github.com/AzureCAT-GSI/DevCampSharedDotNetAPI.git`.  
 
-1. Switch back to Visual Studio and open the API solution with File/Open/Project/Solution:
+1. Switch back to Visual Studio and open the API solution with **File > Open > Project/Solution**:
 
     ![image](./media/2016-10-18_18-34-01.png)
 
@@ -281,7 +286,7 @@ and click on the `Other Downloads` link under v6.9.0:
 
     `http://spring.io/tools/sts`
 
-    For example, after downloading the Eclise install, run it and you'll get this screen:
+    For example, after downloading the Eclipse install, run it and you'll get this screen:
 
     ![image](./media/2016-10-19_10-44-11.png)
 
@@ -321,6 +326,7 @@ and click on the `Other Downloads` link under v6.9.0:
 
     ![image](./media/2016-10-24_14-29-53.png)
 
+---
 ### Exercise 7: Azure Portal walkthrough
 
 1. On your local machine or the virtual machine in Azure, open a browser window and go to the main Azure portal page, http://portal.azure.com.  Log in with the credentials you supplied in the subscription signup exersize.  You should see the Azure portal, similar to this:
@@ -371,6 +377,7 @@ and click on the `Other Downloads` link under v6.9.0:
     ![image](./media/2016-10-19_15-54-02.png)
 
 1. The Question icon will give you the ability to enter a support case, manage support requests, or get further information on Azure.
+    
     ![image](./media/2016-10-19_15-22-14d.png)
 
 1. Your login name and company name on the upper left hand corner has two functions: 
@@ -407,7 +414,7 @@ and click on the `Other Downloads` link under v6.9.0:
 
     ![image](./media/2016-10-19_16-44-51.png)
 
-    >it is particularly useful to create resources in the Azure portal, then save or edit the resource group template.  Resource group templates will be explained further in a later lab.
+> it is particularly useful to create resources in the Azure portal, then save or edit the resource group template.  Resource group templates will be explained further in a later lab.
 
 ### Exercise 8: View the resources you created
 
@@ -419,9 +426,9 @@ Also, our resource group template has added a random string to the end of many o
 
 1. `incidentcache....:`  This is the Redis cache that we use from the application to make data access faster.  The modern-cloud-apps hands on lab adds support to the application to be able to leverage the cache.
 
-1. `ubudev....:` This is an Ubuntu linux virtual machine, meant to be for development in a non Windows server environment.  If you are doing development in Windows only or in an on-premesis machine, you can safely delete this virtual machine.
+1. `ubudev....:` This is an Ubuntu linux virtual machine, meant to be for development in a non Windows server environment.  If you are doing development in Windows only or in an on-premisses machine, you can safely delete this virtual machine.
 
-1. `windev....:` This is the Windows server virtual machine that we are using as a development machine for these hands-on-labs.  You can delete this machine after the developer-environment lab if you are using Linux or an on-premesis machine for development. 
+1. `windev....:` This is the Windows server virtual machine that we are using as a development machine for these hands-on-labs.  You can delete this machine after the developer-environment lab if you are using Linux or an on-premisses machine for development. 
 
 1. `incidentdb....:` This is the documentDB database that will hold the JSON incident documents stored by the application.
 
@@ -447,9 +454,11 @@ Also, our resource group template has added a random string to the end of many o
 
 1. `incidentapi.....:` App service for running the API service that provides a REST API to the web applications.
 
-1. `javaapp....:` App service for running the Java appliation when deployed to the cloud.  If you are not using Java in the labs, you can safely delete this.
+1. `javaapp....:` App service for running the Java application when deployed to the cloud.  If you are not using Java in the labs, you can safely delete this.
 
-1. `nodejsapp....:` App service for running the Node.js appliation when deployed to the cloud.  If you are not using Node.js in the labs, you can safely delete this.
+1. `nodejsapp....:` App service for running the Node.js application when deployed to the cloud.  If you are not using Node.js in the labs, you can safely delete this.
+
+---
 ## Summary
 
 In this hands-on lab, you learned how to:

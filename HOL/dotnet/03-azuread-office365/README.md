@@ -131,7 +131,7 @@ AzureAD can handle authentication for web applications. First we will create a n
     >
     > `Microsoft.Owin.Host.SystemWeb`
 
-1. We need add code to handle the authentication and and cache the sessions tokens so we don't have to get them all time. Navigate to the Utils folder and create a 2 new helper class files. Create `AuthHelper.cs` and `SessionTokeCache.cs`
+1. We need add code to handle the authentication and and cache the sessions tokens so we don't have to get them all time. Navigate to the `Utils` folder and create a 2 new helper class files. Create `AuthHelper.cs` and `Settings.cs`
 
 1. First let's update the Setting.cs class with the additional constants. Paste these values below the existing entries from HOL2.
 
@@ -301,7 +301,7 @@ AzureAD can handle authentication for web applications. First we will create a n
     }
     ```
 
-1. Right click on the App_Start folder and select **New > OWIN Startup Class**
+1. Right click on the App_Start folder and click **Add > OWIN Startup Class**
 
     ![image](./media/image-018.png)
 
@@ -930,7 +930,7 @@ In the previous exercise you read data from the Microsoft Graph, but there are o
     {
         string email = string.Empty;
         //see of the name claim looks like an email address
-        //Another option is to access the graph again to get the email addresss
+        //Another option is to access the graph again to get the email address
         if (CurrentIdentity.Identity.Name.Contains("@"))
         {
             email = CurrentIdentity.Identity.Name;
@@ -976,7 +976,7 @@ In the previous exercise you read data from the Microsoft Graph, but there are o
     // Redirect code below
     ```
 
-1. Click save > build and F5 to start debugging. Now when you add a new incident, you should recieve an email.
+1. Click save > build and F5 to start debugging. Now when you add a new incident, you should receive an email.
     
     ![image](./media/image-023.png)
 

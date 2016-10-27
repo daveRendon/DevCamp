@@ -1,4 +1,4 @@
-# ARM (NodeJS)
+# ARM (Java)
 
 ## Overview
 In this lab, you will learn to provision and manage resources in Azure with the new Azure Resource Manager.  Then we will deploy our sample application into newly created infrastructure.
@@ -11,7 +11,7 @@ In this hands-on lab, you will learn how to:
 
 ## Prerequisites
 
-The source for the starter app is located in the [TODO:ADD REF](#) folder. 
+The source for the starter app is located in the [Start](start) folder. 
 
 ## Exercises
 This hands-on-lab has the following exercises:
@@ -50,7 +50,7 @@ Visual Studio Code includes a sizable ecosystem of extensions.  One such extensi
 
     Save and close the file. You will now be able to use snippets in the creation of ARM files.
 
-1. Now that we have our tooling setup, open `start/armdeploy.json`. This is a skeleton ARM Template, including the four sections Parameters, Variables, Resources, and Outputs. Click into the brackets next to Resources and create a linebreak.  In the new line, type `arm-p` and hit enter to select **arm-plan**.  This will create a new App Service Plan, which controls the features and performance of assoicated Azure Web Apps.
+1. Now that we have our tooling setup, open `start/armdeploy.json`. This is a skeleton ARM Template, including the four sections Parameters, Variables, Resources, and Outputs. Click into the brackets next to Resources and create a linebreak.  In the new line, type `arm-p` and hit enter to select **arm-plan**.  This will create a new App Service Plan, which controls the features and performance of associated Azure Web Apps.
 
     ![image](./media/image-006.png)
 

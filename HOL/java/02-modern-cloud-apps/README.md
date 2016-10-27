@@ -837,3 +837,6 @@ Our application can now create new incidents and upload related images to Azure 
 entry into an Azure queue, to invoke an image resizing process, for example. In a later demo, we'll show how 
 an [Azure Function](https://azure.microsoft.com/en-us/services/functions/) can be invoked via a queue entry to 
 do tasks such as this.
+
+---
+Copyright 2016 Microsoft Corporation. All rights reserved. Except where otherwise noted, these materials are licensed under the terms of the MIT License. You may use them according to the license as is most appropriate for your project. The terms of this license can be found at https://opensource.org/licenses/MIT.

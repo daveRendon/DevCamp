@@ -43,19 +43,15 @@ In this session, we will provide a brief history of Azure, a quick overview of t
 **Watch out for:** Timing. This session is only 30 mins and is meant to level set the audience.
 
 ### HOL Proctoring ###
-<<<<<<< HEAD
+
 **Tasks to complete**
-* Set up development Environment
-=======
-**Tasks to complete***
-* nothing 
->>>>>>> 62206c4d5ee6ea3f6f597e94b816219404c9b584
+* nothing
 
 **Exit criteria**
-* is everyone still here?
+* none
 
 **Possible issues**
-* 
+* none
 
 
 ---
@@ -89,26 +85,32 @@ We will provide an overview of the developer tools available for developing on y
     Have visual studio ready with an ARM template and template MVC web app
 
 **Key takeaways:**  
+* There are lots of tools for making development in Azure easier.  Also, we don't force you to use our tools - you can use the technologies that you like.
 
 **Common questions:** 
+* Can I do development on my local machine?  Of course, we're just using an Azure based machine for convenience and 
+consistency.  If you would like to install the development components on your machine, that is fine.
 
 **Watch out for:** 
+* make sure all development environments are set up
+
 
 ### HOL Proctoring ###
-    * potential subscription setup issues - order is important
-    * if there are problems, we can use the azure passes we've allocated
-    * if the attendee wants to use their on Azure subscription, that's ok but be aware of potential issues with O365 integration  
+* potential subscription setup issues - order of steps is important
+* if there are problems, we can use the azure passes we've allocated
+* if the attendee wants to use their own Azure subscription, that's ok but be aware of potential issues with O365 integration  
 
 **Tasks to complete**
-* 
+* Set up development environment
 
 **Exit criteria**
 * It can take up to 20 minutes or more to deploy the resource group for development.
 
 **Possible issues**
-* No Credit card
-* If they have an existing subscription
-* If they cannot set up a trial
+* No cell phone and/or Credit card for verification
+* if trials have already been created using that phone or credit card, the process may fail.  If so, deploy the azure pass. 
+* If they have an existing subscription they'd like to use, that's fine but there may be issues with connectivity to O365.
+
 
 ----
 ##  Module 2 - Modern Cloud Apps Overview ####

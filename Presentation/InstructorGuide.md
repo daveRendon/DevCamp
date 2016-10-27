@@ -25,11 +25,12 @@ In this session, we will provide a brief history of Azure, a quick overview of t
 
 **Goal:** This deck is marketing focused and is designed to provide a high-level overview of Azure. It is geared towards newcomers to the Microsoft cloud offerings.
 
-**Demos:** You can show the portal
+**Demos:** You can show the portal, and show the running application
 
 **Session prep tips:** 
 * Review the latest Azure features.  Explain that there may be Azure changes since this content has been created.
 * Ensure that you are familiar with the roadmap sites on [Azure.com](https://azure.microsoft.com/en-us/updates/) and [Microsoft.com](https://www.microsoft.com/en-us/server-cloud/roadmap/) 
+* Create the DevCamp resource group and deploy one or more of the sample applications to it.
 
 **Key takeaways:** 
 * Ensure that the audience is prepared for 2 days of hands on development. If they are not developers, it may be difficult for them to understand the content 
@@ -43,6 +44,7 @@ In this session, we will provide a brief history of Azure, a quick overview of t
 **Watch out for:** Timing. This session is only 30 mins and is meant to level set the audience.
 
 ### HOL Proctoring ###
+There is no HOL for this module
 
 **Tasks to complete**
 * nothing
@@ -65,21 +67,22 @@ We will provide an overview of the developer tools available for developing on y
 
 **Possible demos:** 
 * Demo 1: Visual Studio and Azure
-    show ARM template
-    create a simple MVC application, publish it to Azure
-    show cloud explorer
-    show git integration
+    1. show ARM template
+    1. create a simple MVC application, publish it to Azure
+    1. show cloud explorer
+    1. show git integration
+
 * Demo 2: Azure CLI (on Windows 10 Bash, but it is also available on Docker, Linux/OSX etc.)
     Start Azure CLI, here are some commands you can show
-        ```
-        azure config mode ARM
-        azure login
-        azure location list
-        azure group list
-        azure group show DevCamp
-        azure vm list
-        azure vm start
-        ```
+    ```CMD
+    azure config mode ARM
+    azure login
+    azure location list
+    azure group list
+    azure group show DevCamp
+    azure vm list
+    azure vm start
+    ```
 
 **Session prep tips:** 
     Have visual studio ready with an ARM template and template MVC web app
@@ -92,14 +95,13 @@ We will provide an overview of the developer tools available for developing on y
 consistency.  If you would like to install the development components on your machine, that is fine.
 
 **Watch out for:** 
-* make sure all development environments are set up
+* Make sure all attendee development environments are set up
 
 
 ### HOL Proctoring ###
-* potential subscription setup issues - order of steps is important
-* if there are problems, we can use the azure passes we've allocated
-* if the attendee wants to use their own Azure subscription, that's ok but be aware of potential issues with O365 integration  
-
+* Potential subscription setup issues - order of steps is important
+* If there are problems, we can use the azure passes we've allocated
+* If the attendee wants to use their own Azure subscription, that's ok but be aware of potential issues with O365 integration  
 **Tasks to complete**
 * Set up development environment
 
@@ -108,7 +110,7 @@ consistency.  If you would like to install the development components on your ma
 
 **Possible issues**
 * No cell phone and/or Credit card for verification
-* if trials have already been created using that phone or credit card, the process may fail.  If so, deploy the azure pass. 
+* If trials have already been created using that phone or credit card, the process may fail.  If so, deploy the azure pass. 
 * If they have an existing subscription they'd like to use, that's fine but there may be issues with connectivity to O365.
 
 
@@ -118,24 +120,25 @@ We will provide an overview of some common cloud technologies, patterns and Azur
 
 [View PowerPoint](Presentation/Module02-ModernCloudApps.pptx?raw=true)
 
-**Goal:** 
+**Goal:** High level understanding of application architecture for Azure.
 
 **Demos:** 
     There are no predefined demos in this section, but feel free to
-    * show off the structure of the `start` code 
-    * pull up the `end` code and explain it
+1. show off the structure of the `start` code 
+1. pull up the `end` code and explain it
 
 **Session prep tips:**
     Run through the lab and understand the code
 
 **Key takeaways:**  
-    * design of modern cloud apps for scalability
-    * integration with Azure APIs using libraries or REST calls
+* design of modern cloud apps for scalability
+* integration with Azure APIs using libraries or REST calls
 
 **Common questions:** 
-    * how the redis cache works
+* how does redis cache work?
 
 **Watch out for:** 
+* environment variables need to be set up
 
 ### HOL Proctoring ###
 
@@ -156,7 +159,7 @@ We will provide an overview of Azure AD, and discuss areas for integration with 
 [View PowerPoint](Presentation/Module03-Identity-0365Apis.pptxx?raw=true)
 
 **Goal:** 
-* explain the process of authentication with Azure AD
+* Explain the process of authentication with Azure AD
 
 **Demos:** 
 * oauth sandbox - https://oauthplay.azurewebsites.net/ 
@@ -164,31 +167,30 @@ We will provide an overview of Azure AD, and discuss areas for integration with 
 * graph explorer - https://graphexplorer2.azurewebsites.net/
     show usage of graphexplorer
     
-
 **Session prep tips:**
-* make sure you have an ID that you can use for the demo
-* familiarize yourself with oauthplay
-* familiarize yourself with graphexplorer
+* Make sure you have an ID that you can use for the demo
+* Familiarize yourself with oauthplay
+* Familiarize yourself with graphexplorer
 
 **Key takeaways:**
-* authentication via AAD is easy
+* Authentication via AAD is easy to add to your application
 
 **Common questions:**
-* questions about the authentication dance 
+* questions about the authentication dance. You should be familiar with this, because it's central to this module.
 
 **Watch out for:** 
-* do not use the initial wizard in `apps.dev.microsoft.com` portal.  Cancel out of the wizard, and then add the application.
-* when you register the application via `apps.dev.microsoft.com`, you cannot edit it within the Azure portal.  You need to 
+* Do not use the initial wizard in `apps.dev.microsoft.com` portal.  Cancel out of the wizard, and then add the application.
+* When you register the application via `apps.dev.microsoft.com`, you cannot edit it within the Azure portal.  You need to 
 stick with the `apps.dev.microsoft.com` portal for those tasks.
 
 ### HOL Proctoring ###
 
 **Tasks to complete**
-* create application in the apps.dev.microsoft.com portal.
+* Create application in the apps.dev.microsoft.com portal.
 
 
 **Exit criteria**
-* application is authenticated via Azure active directory, profile retrieval works, and sending email works.
+* Application is authenticated via Azure active directory, profile retrieval works, and sending email works.
 
 **Possible issues**
 * The java application does not have mail sending right now, due to it using the v1.6 api
@@ -214,31 +216,32 @@ We will provide an overview of Visual Studio Team Services (VSTS), DevOps concep
 *extra credit: make a change to the application, commit & push, and show the change (a few minutes later) running in the portal.
 
 **Session prep tips:**
-* create a web app to deploy the application to in the demo
+* Create an Azure web app to deploy the application to in the demo
 
 **Key takeaways:**  
-* using a continuous integration/deployment methodology can make your organization more efficient
+* Using a continuous integration/deployment methodology can make your organization more efficient
 
 **Common questions:** 
-* do I have to use VSTS?  No, you can use whatever CI tools that you like.  
+* Do I have to use VSTS?  No, you can use whatever CI tools that you like.  
 
 **Watch out for:** 
-* it's easy to make mistakes in the build pipelines
-* changes are being made to VSTS frequently, so you may see some differences with the documentation
+* It's easy to make mistakes in the build pipelines
+* Changes are being made to VSTS frequently, so you may see some differences with the documentation
 
 ### HOL Proctoring ###
 
 **Tasks to complete**
-* create project/repo
-* push code to repo
-* create build and publish pipeline
+* Create project/repo
+* Push code to repo
+* Create build and publish pipeline
 
 **Exit criteria**
-* applications are running in Azure web apps
+* Applications are running in Azure web apps
 
 **Possible issues**
-* variables not set properly in the build/publish process
-* wrong publish steps used - make sure you are using the ARM one
+* Be aware that the portal might not be exactly the same as our screenshots - changes are made to VSTS (and Azure) on a regular basis
+* Variables not set properly in the build/publish process
+* Wrong publish steps used - make sure you are using the ARM one
 
 ---
 
@@ -247,40 +250,44 @@ Intro to Azure Resource manager and infrastructure as code.
 
 [View PowerPoint](Presentation/Module05-ARM-IAC.pptx?raw=true)
 **Goal:** 
+* Describe how Azure infrastructure can be managed just like program code.
 
 **Demos:** 
-    1. In Azure portal, show resource group, navigate to the template reverse engineering feature
+1. In Azure portal, show resource group, navigate to the template reverse engineering feature
 
-    1. Within Visual Studio:
-        * create a resource group template
-        * add a virtual machine
-        * show JSON syntax
-        * show how you can deploy the resource group template
+1. Within Visual Studio:
+    * create a resource group template
+    * add a virtual machine
+    * show JSON syntax
+    * show how you can deploy the resource group template
     
-    1. within Visual studio, with template created above
-        * add DSC to the virtual machine 
-        * show DSC template
-        * uncomment the web server sample code
-        * run the template if you'd like
+1. Within Visual Studio, with template created above
+    * add DSC to the virtual machine 
+    * show DSC template
+    * uncomment the web server sample code
+    * run the template if you'd like
 
 **Session prep tips:**
+* Have Azure and Visual Studio resources handy.
 
 **Key takeaways:**  
-* resource group templates as code
-* extensive capabilities of templates + DSC
+* Resource group templates as code
+* Extensive capabilities of templates + DSC
 
 **Common questions:** 
-* what are capabilities of templates and DSC
+* What are capabilities of templates and DSC
 
 **Watch out for:** 
+* Syntax errors can trip you up 
 
 ### HOL Proctoring ###
 
 **Tasks to complete**
-* 
+* Create a RG template
+* Deploy it to Azure
 
 **Exit criteria**
-* 
+* This lab is independent of the others.
 
 **Possible issues**
 * Syntax issues and debugging of such
@@ -296,28 +303,39 @@ We will introduce you to the monitoring capabilities in Azure and show you how y
 
 **Demos:** 
 * Azure Monitor
-    Open azure portal
-    Show metrics
-    Show audit logs
-    Show export to storage, event hubs, web hooks
+1. Open azure portal
+1. Show metrics
+1. Show audit logs
+1. Show export to storage, event hubs, web hooks
+
 * Application insights
-    Show app insights resource
-    Show .NET with live site capabilities
-    Show  web test
+1. Show app insights resource
+1. Show .NET with live site capabilities
+1. Show  web test
+
+*OMS
+1. Open OMS
+1. Show dashboard
+1. Add VM to OMS
+1. Show the solution packs
+1. Show the search experience
 
 
 **Session prep tips:**
-*Have your application running in Azure, and have AppInsights running.  Generate some traffic to your application 
-*Keep in mind that it takes a bit of time for things to show up in the portal
+* Have your application running in Azure, and have AppInsights running.  Generate some traffic to your application 
+* Keep in mind that it takes a bit of time for things to show up in the portal
+* Create an OMS portal
+
 
 **Key takeaways:**  
 * Azure + Application Insights provides comprehensive monitoring and alerting for your application
 
 **Common questions:** 
-* can I have custom logged items - yes, there is an API for doing that
-* what is the load on traffic, my site, etc?  You wouldn't have to instrument every browser - we have features to control that
+* Can I have custom logged items - yes, there is an API for doing that
+* What is the load on traffic, my site, etc?  You wouldn't have to instrument every browser - we have features to control that
 
 **Watch out for:** 
+* Need to create everything ahead of time, to make the demo look nice.
 
 ### HOL Proctoring ###
 
@@ -333,7 +351,6 @@ We will introduce you to the monitoring capabilities in Azure and show you how y
 
 **Possible issues**
 * It takes some time (~5 minutes) for the telemetry to show up in the portal, making it difficult to know if things are working properly.
-
 
 ---
 ## Module 7 - Docker ####
@@ -463,7 +480,6 @@ To introduce the audience to a subset of the developer Azure platform features
 **Demos:** 
 * Cognitive Services
 * Bot framework
-*  
 
 **Session prep tips:**
 
@@ -472,6 +488,8 @@ To introduce the audience to a subset of the developer Azure platform features
 **Common questions:** 
 
 **Watch out for:**
+* Since this is the last segment, folks may need to leave early
+* Don't forget to ask for the evals to be completed
 
 ### HOL Proctoring ###
 

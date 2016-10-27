@@ -108,7 +108,7 @@ AzureAD can handle authentication for web applications. First we will create a n
    <!--HOL 3-->
     <add key="AAD_APP_ID" value="APPID" />
     <add key="AAD_APP_SECRET" value="SECRET" />
-    <add key="AAD_APP_REDIRECTURI" value="LOCAL HTTPS IIS WEBSITE" />
+    <add key="AAD_APP_REDIRECTURI" value="LOCAL IIS WEBSITE URL" />
     ```
 
 1. Go back to the app registration screen and update the return URL with the new port and click save.

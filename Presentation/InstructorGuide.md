@@ -114,13 +114,15 @@ We will provide an overview of some common cloud technologies, patterns and Azur
 **Goal:** 
 
 **Demos:** 
-    There are no predefined demos in this section, but feel free to pull up the `end` code and explain it.
+    There are no predefined demos in this section, but feel free to
+    * show off the structure of the `start` code 
+    * pull up the `end` code and explain it
 
 **Session prep tips:**
     Run through the lab and understand the code
 
 **Key takeaways:**  
-    Integration of storage and cache into our application
+    * design of modern cloud apps for scalability
 
 **Common questions:** 
     * how the redis cache works
@@ -133,11 +135,10 @@ We will provide an overview of some common cloud technologies, patterns and Azur
 * 
 
 **Exit criteria**
-* 
+* Integration of storage and cache into our application
 
 **Possible issues**
-* 
-
+* As always, if there is not enough time to create the lab, feel free to jump to `end`
 
 ---
 
@@ -147,6 +148,7 @@ We will provide an overview of Azure AD, and discuss areas for integration with 
 [View PowerPoint](Presentation/Module03-Identity-0365Apis.pptxx?raw=true)
 
 **Goal:** 
+* explain the process of authentication with Azure AD
 
 **Demos:** 
 

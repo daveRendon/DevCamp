@@ -16,7 +16,7 @@ This guide uses [Eclipse](https://www.eclipse.org) for editing, however please f
 
 In this hands-on lab, you will learn how to:
 
-* Use Eclipse to add connecting to an API
+* Use Eclipse to connect to an API
 * Deploy the application to an Azure Web App
 * Modify a view to add caching
 * Modify code to add queuing and blob storage
@@ -503,8 +503,8 @@ and can easily use Azure Redis Cache to hold the data.
                 String redishost = System.getenv("REDISCACHE_HOSTNAME");
                 log.info("REDISCACHE_HOSTNAME="+redishost);
                 ob.setHostName(redishost);
-                String redisport = System.getenv("REDISCACHE_SSLPORT");
-                log.info("REDISCACHE_SSLPORT="+redisport);
+                String redisport = System.getenv("REDISCACHE_PORT");
+                log.info("REDISCACHE_PORT="+redisport);
                 try {
                     ob.setPort(Integer.parseInt(  redisport));
                 } catch (NumberFormatException e1) {

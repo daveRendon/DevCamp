@@ -47,7 +47,7 @@ In this session, we will provide a brief history of Azure, a quick overview of t
 * nothing 
 
 **Exit criteria**
-* is everyone still here?
+* 
 
 **Possible issues**
 * 
@@ -90,9 +90,9 @@ We will provide an overview of the developer tools available for developing on y
 **Watch out for:** 
 
 ### HOL Proctoring ###
-    * potential subscription setup issues - order is important
+    * potential subscription setup issues - order of steps is important
     * if there are problems, we can use the azure passes we've allocated
-    * if the attendee wants to use their on Azure subscription, that's ok but be aware of potential issues with O365 integration  
+    * if the attendee wants to use their own Azure subscription, that's ok but be aware of potential issues with O365 integration  
 
 **Tasks to complete**
 * 

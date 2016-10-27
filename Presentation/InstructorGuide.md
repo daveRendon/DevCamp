@@ -249,12 +249,28 @@ Intro to Azure Resource manager and infrastructure as code.
 **Goal:** 
 
 **Demos:** 
+    1. In Azure portal, show resource group, navigate to the template reverse engineering feature
+
+    1. Within Visual Studio:
+        * create a resource group template
+        * add a virtual machine
+        * show JSON syntax
+        * show how you can deploy the resource group template
+    
+    1. within Visual studio, with template created above
+        * add DSC to the virtual machine 
+        * show DSC template
+        * uncomment the web server sample code
+        * run the template if you'd like
 
 **Session prep tips:**
 
 **Key takeaways:**  
+* resource group templates as code
+* extensive capabilities of templates + DSC
 
 **Common questions:** 
+* what are capabilities of templates and DSC
 
 **Watch out for:** 
 
@@ -267,7 +283,7 @@ Intro to Azure Resource manager and infrastructure as code.
 * 
 
 **Possible issues**
-* 
+* Syntax issues and debugging of such
 
 ---
 ## Module 6 - Monitoring ####
@@ -276,27 +292,47 @@ We will introduce you to the monitoring capabilities in Azure and show you how y
 [View PowerPoint](Presentation/Module06-Monitoring.pptxx?raw=true)
 
 **Goal:** 
+* show Azure application monitoring capabilities
 
 **Demos:** 
+* Azure Monitor
+    Open azure portal
+    Show metrics
+    Show audit logs
+    Show export to storage, event hubs, web hooks
+* Application insights
+    Show app insights resource
+    Show .NET with live site capabilities
+    Show  web test
+
 
 **Session prep tips:**
+*Have your application running in Azure, and have AppInsights running.  Generate some traffic to your application 
+*Keep in mind that it takes a bit of time for things to show up in the portal
 
 **Key takeaways:**  
+* Azure + Application Insights provides comprehensive monitoring and alerting for your application
 
 **Common questions:** 
+* can I have custom logged items - yes, there is an API for doing that
+* what is the load on traffic, my site, etc?  You wouldn't have to instrument every browser - we have features to control that
 
 **Watch out for:** 
 
 ### HOL Proctoring ###
 
 **Tasks to complete**
-* 
+* create AppInsights deployment
+* add AppInsights tooling to your application
+* run the application & see AppInsights
+* create custom logged items
+* create a web availability test 
 
 **Exit criteria**
-* 
+* Application is in Azure, and has monitoring and metrics
 
 **Possible issues**
-* 
+* It takes some time (~5 minutes) for the telemetry to show up in the portal, making it difficult to know if things are working properly.
 
 
 ---

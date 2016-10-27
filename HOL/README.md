@@ -75,3 +75,7 @@ This lab will introduce you to Azure Application Insights. You will perform the 
 * Stretch - Create custom metric around the API call
 
 #### View instructions for [.NET](../HOL/dotnet/06-appinsights) | [Node.JS](../HOL/node/06-appinsights) | [Java](../HOL/java/06-appinsights)
+
+---
+Copyright 2016 Microsoft Corporation. All rights reserved. Except where otherwise noted, these materials are licensed under the terms of the MIT License. You may use them according to the license as is most appropriate for your project. The terms of this license can be found at https://opensource.org/licenses/MIT.
+

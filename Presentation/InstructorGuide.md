@@ -38,7 +38,7 @@ In this session, we will provide a brief history of Azure, a quick overview of t
 **Watch out for:** Timing. This session is only 30 mins and is meant to level set the audience.
 
 ### HOL Proctoring ###
-**Tasks to complete***
+**Tasks to complete**
 * Set up development Environment
 
 **Exit criteria**
@@ -243,27 +243,114 @@ In this module, we will provide an overview of Docker and introduce you to the A
 [View PowerPoint](Presentation/Module07-Containers.pptx?raw=true)
 
 **Goal:** 
+* Introduce audience to Docker
+* Show Docker tools and integration with Azure and Windows
 
 **Demos:** 
+* Pulling an image, running a container
+* Docker tools for Windows (Use the beta tools to switch from Windows and Linux on Windows 10)
+* Docker tools for Visual Studio-preview
+* App migration with Windows containers 
+* Creating a Docker file
+
+### Docker snippets reference ###
+Search Docker for Microsoft Images
+```
+docker search microsoft
+```
+
+Pull a Docker image from Docker Hub (Linux Containers)
+```
+docker pull nginx
+```
+
+Pull a Docker image from Docker Hub (Windows Containers)
+>**Warning, these take long to pull**
+```
+docker pull microsoft/aspnet
+```
+
+Docker run a container interactive
+```
+docker run -it -p 8000:8000 nginx bash
+
+root@CONTAINERID:/# dir
+root@CONTAINERID:/# exit
+
+```
+Docker view running containers
+```
+docker ps
+```
+Docker attach to running container
+```
+docker attach nginx
+```
+Docker stop a running container
+```
+docker stop nginx
+```
+
+Docker file
+
+```
+# The `FROM` instruction specifies the base image. You are
+# extending the `microsoft/aspnet` image.
+ 
+FROM microsoft/aspnet
+ 
+# Next, this Dockerfile creates a directory for your application
+RUN mkdir C:\app
+ 
+# configure the new site in IIS.
+RUN powershell -NoProfile -Command \
+    Import-module IISAdministration; \
+    New-IISSite -Name "ASPNET" -PhysicalPath C:\app -BindingInformation "*:8000:"
+ 
+# This instruction tells the container to listen on port 8000. 
+EXPOSE 8000
+ 
+# The final instruction copies the site you published earlier into the container.
+ADD bin/PublishOutput /app
+```
+
+> Create 25 NGINX containers (CMD/POSH)
+
+```
+for i in {1..25}; do docker run -p 80 -d nginx; done
+```
+
+> Delete all containers (BASH)
+
+```
+docker rm -f `docker ps --no-trunc -aq`
+```
 
 **Session prep tips:**
+* https://github.com/harbur/docker-workshop
+* https://github.com/RainBirdAi/docker-workshop
+* On Windows
+    * make sure you have the Anniversary edition
+    * Activate the containers feature in Windows
+    * Download the beta tools [Windows](https://docs.docker.com/docker-for-windows/)
+* On MacOSX
+    * Download the beta tools [MacOSX](https://docs.docker.com/docker-for-mac/)
 
 **Key takeaways:**  
+* Ensure the audience understands the difference between containers and Hyper-V virtualization
+* Understand the difference between Linux and Windows containers
+* Understand the container life-cycle process
 
 **Common questions:** 
+* How do I manage large container farms?
+    * Azure container service, Docker Swarm, Mesosphere-DCOS, Kubernetes 
 
 **Watch out for:** 
+* Time to pull images. Do this ahead of time
+* If you are demoing on a laptop, make sure you have enough space and resources. An 8 GB machine may not perform well if you have a lot of open applications running.
 
 ### HOL Proctoring ###
-
-**Tasks to complete**
-* 
-
-**Exit criteria**
-* 
-
-**Possible issues**
-* 
+N/A No lab for this session
 
 ---
 ## Module 8 - Azure features and APIs ####
@@ -272,8 +359,12 @@ We will provide a quick lap around the various APIs, features and services avail
 [View PowerPoint](Presentation/Module08-Azure Features.pptx?raw=true)
 
 **Goal:** 
+To introduce the audience to a subset of the developer Azure platform features
 
 **Demos:** 
+* Cognitive Services
+* Bot framework
+*  
 
 **Session prep tips:**
 
@@ -285,12 +376,4 @@ We will provide a quick lap around the various APIs, features and services avail
 
 ### HOL Proctoring ###
 
-**Tasks to complete**
-* 
-
-**Exit criteria**
-* 
-
-**Possible issues**
-* 
- 
+N/A No lab for this session

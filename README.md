@@ -139,3 +139,6 @@ In this module, we will provide an overview of Docker and introduce you to the A
 We will provide a quick lap around the various APIs, features and services available for developers.
 
 [View PowerPoint](Presentation/Module08-Azure Features.pptx?raw=true)
+
+---
+Copyright 2016 Microsoft Corporation. All rights reserved. Except where otherwise noted, these materials are licensed under the terms of the MIT License. You may use them according to the license as is most appropriate for your project. The terms of this license can be found at https://opensource.org/licenses/MIT.

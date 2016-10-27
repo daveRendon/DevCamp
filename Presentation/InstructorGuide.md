@@ -114,12 +114,16 @@ We will provide an overview of some common cloud technologies, patterns and Azur
 **Goal:** 
 
 **Demos:** 
+    There are no predefined demos in this section, but feel free to pull up the `end` code and explain it.
 
 **Session prep tips:**
+    Run through the lab and understand the code
 
 **Key takeaways:**  
+    Integration of storage and cache into our application
 
 **Common questions:** 
+    * how the redis cache works
 
 **Watch out for:** 
 

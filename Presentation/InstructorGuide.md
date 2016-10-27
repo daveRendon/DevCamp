@@ -130,6 +130,7 @@ We will provide an overview of some common cloud technologies, patterns and Azur
 
 **Key takeaways:**  
     * design of modern cloud apps for scalability
+    * integration with Azure APIs using libraries or REST calls
 
 **Common questions:** 
     * how the redis cache works
@@ -139,7 +140,7 @@ We will provide an overview of some common cloud technologies, patterns and Azur
 ### HOL Proctoring ###
 
 **Tasks to complete**
-* 
+* load project into your IDE of choice
 
 **Exit criteria**
 * Integration of storage and cache into our application
@@ -158,25 +159,39 @@ We will provide an overview of Azure AD, and discuss areas for integration with 
 * explain the process of authentication with Azure AD
 
 **Demos:** 
+* oauth sandbox - https://oauthplay.azurewebsites.net/ 
+    show the steps of the authentication process
+* graph explorer - https://graphexplorer2.azurewebsites.net/
+    show usage of graphexplorer
+    
 
 **Session prep tips:**
+* make sure you have an ID that you can use for the demo
+* familiarize yourself with oauthplay
+* familiarize yourself with graphexplorer
 
-**Key takeaways:**  
+**Key takeaways:**
+* authentication via AAD is easy
 
-**Common questions:** 
+**Common questions:**
+* questions about the authentication dance 
 
 **Watch out for:** 
+* do not use the initial wizard in `apps.dev.microsoft.com` portal.  Cancel out of the wizard, and then add the application.
+* when you register the application via `apps.dev.microsoft.com`, you cannot edit it within the Azure portal.  You need to 
+stick with the `apps.dev.microsoft.com` portal for those tasks.
 
 ### HOL Proctoring ###
 
 **Tasks to complete**
-* 
+* create application in the apps.dev.microsoft.com portal.
+
 
 **Exit criteria**
-* 
+* application is authenticated via Azure active directory, profile retrieval works, and sending email works.
 
 **Possible issues**
-* 
+* The java application does not have mail sending right now, due to it using the v1.6 api
 
 ----
 
@@ -186,27 +201,44 @@ We will provide an overview of Visual Studio Team Services (VSTS), DevOps concep
 [View PowerPoint](Presentation/Module04-DevOps.pptx?raw=true)
 
 **Goal:** 
+* explain VSTS devops setup
 
 **Demos:** 
+1. create new project in VSTS with git version con
+1. use link to open project in Visual Studio
+1. create C# MVC web app solution in Visual Studio
+1. commit & push
+1. show code in VSTS portal
+1. create build and publish steps
+1. show the application running in Azure
+*extra credit: make a change to the application, commit & push, and show the change (a few minutes later) running in the portal.
 
 **Session prep tips:**
+* create a web app to deploy the application to in the demo
 
 **Key takeaways:**  
+* using a continuous integration/deployment methodology can make your organization more efficient
 
 **Common questions:** 
+* do I have to use VSTS?  No, you can use whatever CI tools that you like.  
 
 **Watch out for:** 
+* it's easy to make mistakes in the build pipelines
+* changes are being made to VSTS frequently, so you may see some differences with the documentation
 
 ### HOL Proctoring ###
 
 **Tasks to complete**
-* 
+* create project/repo
+* push code to repo
+* create build and publish pipeline
 
 **Exit criteria**
-* 
+* applications are running in Azure web apps
 
 **Possible issues**
-* 
+* variables not set properly in the build/publish process
+* wrong publish steps used - make sure you are using the ARM one
 
 ---
 
@@ -217,12 +249,28 @@ Intro to Azure Resource manager and infrastructure as code.
 **Goal:** 
 
 **Demos:** 
+    1. In Azure portal, show resource group, navigate to the template reverse engineering feature
+
+    1. Within Visual Studio:
+        * create a resource group template
+        * add a virtual machine
+        * show JSON syntax
+        * show how you can deploy the resource group template
+    
+    1. within Visual studio, with template created above
+        * add DSC to the virtual machine 
+        * show DSC template
+        * uncomment the web server sample code
+        * run the template if you'd like
 
 **Session prep tips:**
 
 **Key takeaways:**  
+* resource group templates as code
+* extensive capabilities of templates + DSC
 
 **Common questions:** 
+* what are capabilities of templates and DSC
 
 **Watch out for:** 
 
@@ -235,7 +283,7 @@ Intro to Azure Resource manager and infrastructure as code.
 * 
 
 **Possible issues**
-* 
+* Syntax issues and debugging of such
 
 ---
 ## Module 6 - Monitoring ####
@@ -244,27 +292,47 @@ We will introduce you to the monitoring capabilities in Azure and show you how y
 [View PowerPoint](Presentation/Module06-Monitoring.pptxx?raw=true)
 
 **Goal:** 
+* show Azure application monitoring capabilities
 
 **Demos:** 
+* Azure Monitor
+    Open azure portal
+    Show metrics
+    Show audit logs
+    Show export to storage, event hubs, web hooks
+* Application insights
+    Show app insights resource
+    Show .NET with live site capabilities
+    Show  web test
+
 
 **Session prep tips:**
+*Have your application running in Azure, and have AppInsights running.  Generate some traffic to your application 
+*Keep in mind that it takes a bit of time for things to show up in the portal
 
 **Key takeaways:**  
+* Azure + Application Insights provides comprehensive monitoring and alerting for your application
 
 **Common questions:** 
+* can I have custom logged items - yes, there is an API for doing that
+* what is the load on traffic, my site, etc?  You wouldn't have to instrument every browser - we have features to control that
 
 **Watch out for:** 
 
 ### HOL Proctoring ###
 
 **Tasks to complete**
-* 
+* create AppInsights deployment
+* add AppInsights tooling to your application
+* run the application & see AppInsights
+* create custom logged items
+* create a web availability test 
 
 **Exit criteria**
-* 
+* Application is in Azure, and has monitoring and metrics
 
 **Possible issues**
-* 
+* It takes some time (~5 minutes) for the telemetry to show up in the portal, making it difficult to know if things are working properly.
 
 
 ---

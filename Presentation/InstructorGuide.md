@@ -130,6 +130,7 @@ We will provide an overview of some common cloud technologies, patterns and Azur
 
 **Key takeaways:**  
     * design of modern cloud apps for scalability
+    * integration with Azure APIs using libraries or REST calls
 
 **Common questions:** 
     * how the redis cache works
@@ -139,7 +140,7 @@ We will provide an overview of some common cloud technologies, patterns and Azur
 ### HOL Proctoring ###
 
 **Tasks to complete**
-* 
+* load project into your IDE of choice
 
 **Exit criteria**
 * Integration of storage and cache into our application
@@ -158,25 +159,39 @@ We will provide an overview of Azure AD, and discuss areas for integration with 
 * explain the process of authentication with Azure AD
 
 **Demos:** 
+* oauth sandbox - https://oauthplay.azurewebsites.net/ 
+    show the steps of the authentication process
+* graph explorer - https://graphexplorer2.azurewebsites.net/
+    show usage of graphexplorer
+    
 
 **Session prep tips:**
+* make sure you have an ID that you can use for the demo
+* familiarize yourself with oauthplay
+* familiarize yourself with graphexplorer
 
-**Key takeaways:**  
+**Key takeaways:**
+* authentication via AAD is easy
 
-**Common questions:** 
+**Common questions:**
+* questions about the authentication dance 
 
 **Watch out for:** 
+* do not use the initial wizard in `apps.dev.microsoft.com` portal.  Cancel out of the wizard, and then add the application.
+* when you register the application via `apps.dev.microsoft.com`, you cannot edit it within the Azure portal.  You need to 
+stick with the `apps.dev.microsoft.com` portal for those tasks.
 
 ### HOL Proctoring ###
 
 **Tasks to complete**
-* 
+* create application in the apps.dev.microsoft.com portal.
+
 
 **Exit criteria**
-* 
+* application is authenticated via Azure active directory, profile retrieval works, and sending email works.
 
 **Possible issues**
-* 
+* The java application does not have mail sending right now, due to it using the v1.6 api
 
 ----
 
@@ -186,27 +201,44 @@ We will provide an overview of Visual Studio Team Services (VSTS), DevOps concep
 [View PowerPoint](Presentation/Module04-DevOps.pptx?raw=true)
 
 **Goal:** 
+* explain VSTS devops setup
 
 **Demos:** 
+1. create new project in VSTS with git version con
+1. use link to open project in Visual Studio
+1. create C# MVC web app solution in Visual Studio
+1. commit & push
+1. show code in VSTS portal
+1. create build and publish steps
+1. show the application running in Azure
+*extra credit: make a change to the application, commit & push, and show the change (a few minutes later) running in the portal.
 
 **Session prep tips:**
+* create a web app to deploy the application to in the demo
 
 **Key takeaways:**  
+* using a continuous integration/deployment methodology can make your organization more efficient
 
 **Common questions:** 
+* do I have to use VSTS?  No, you can use whatever CI tools that you like.  
 
 **Watch out for:** 
+* it's easy to make mistakes in the build pipelines
+* changes are being made to VSTS frequently, so you may see some differences with the documentation
 
 ### HOL Proctoring ###
 
 **Tasks to complete**
-* 
+* create project/repo
+* push code to repo
+* create build and publish pipeline
 
 **Exit criteria**
-* 
+* applications are running in Azure web apps
 
 **Possible issues**
-* 
+* variables not set properly in the build/publish process
+* wrong publish steps used - make sure you are using the ARM one
 
 ---
 

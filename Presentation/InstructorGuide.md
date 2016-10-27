@@ -12,7 +12,10 @@ The application is very simple; a CRUD based form with as few moving parts as po
 
 
 ## Getting prepared to deliver ##
-Working on a Windows machine is ok if you have Windows 10 Anniversary edition. This will allow you to show 
+Working on a Windows machine is ok if you have Windows 10 Anniversary edition. This will allow you to show bash on Windows.
+
+It may be convenient to simply use the Azure-based VM in the resource group that the attendees will be using.  If you'd rather use
+your own local machine, you will need Visual Studio (at least the community edition) installed.  Also, install the Azure SDK and Azure storage explorer.
 
 ---
 ## Module 0 - Introduction, roadmap and course overview ###
@@ -25,7 +28,7 @@ In this session, we will provide a brief history of Azure, a quick overview of t
 **Demos:** You can show the portal
 
 **Session prep tips:** 
-* Review the latest Azure features.
+* Review the latest Azure features.  Explain that there may be Azure changes since this content has been created.
 * Ensure that you are familiar with the roadmap sites on [Azure.com](https://azure.microsoft.com/en-us/updates/) and [Microsoft.com](https://www.microsoft.com/en-us/server-cloud/roadmap/) 
 
 **Key takeaways:** 
@@ -34,20 +37,20 @@ In this session, we will provide a brief history of Azure, a quick overview of t
 **Common questions:**
 * Will you be covering IaaS and/or Azure Stack? No.
 * Will this cover competitive platforms? No.
+* Will this cover how to program in (.NET, Java, Node)?  No.
+* Will this have a tutorial on how to use my favorite IDE?  No.
 
 **Watch out for:** Timing. This session is only 30 mins and is meant to level set the audience.
 
 ### HOL Proctoring ###
 **Tasks to complete***
-* Set up development Environment
+* nothing 
 
 **Exit criteria**
-* It can take up to 20 minutes or more to deploy the resource group for development.
+* is everyone still here?
 
 **Possible issues**
-* No Credit card
-* If they have an existing subscription
-* If they cannot set up a trial
+* 
 
 
 ---
@@ -60,14 +63,25 @@ We will provide an overview of the developer tools available for developing on y
 **Goal:** Provides an overview into the different development approaches, introduction to the SDKs, tools and frameworks for cross platform development.
 
 **Possible demos:** 
-* Azure CLI (on Windows 10 Bash, Docker, Linux/OSX, Windows)
-* Azure PowerShell (On Windows)
-* Visual Studio integration (On Windows)
-* Java integration with Eclipse (On Linux/Windows)
-* Node integration with VS Code (NPM on Windows/Linux/OSX) 
+* Demo 1: Visual Studio and Azure
+    show ARM template
+    create a simple MVC application, publish it to Azure
+    show cloud explorer
+    show git integration
+* Demo 2: Azure CLI (on Windows 10 Bash, but it is also available on Docker, Linux/OSX etc.)
+    Start Azure CLI, here are some commands you can show
+        ```
+        azure config mode ARM
+        azure login
+        azure location list
+        azure group list
+        azure group show DevCamp
+        azure vm list
+        azure vm start
+        ```
 
 **Session prep tips:** 
-
+    Have visual studio ready with an ARM template and template MVC web app
 
 **Key takeaways:**  
 
@@ -75,17 +89,21 @@ We will provide an overview of the developer tools available for developing on y
 
 **Watch out for:** 
 
-
 ### HOL Proctoring ###
+    * potential subscription setup issues - order is important
+    * if there are problems, we can use the azure passes we've allocated
+    * if the attendee wants to use their on Azure subscription, that's ok but be aware of potential issues with O365 integration  
 
 **Tasks to complete**
 * 
 
 **Exit criteria**
-* 
+* It can take up to 20 minutes or more to deploy the resource group for development.
 
 **Possible issues**
-* 
+* No Credit card
+* If they have an existing subscription
+* If they cannot set up a trial
 
 ----
 ##  Module 2 - Modern Cloud Apps Overview ####

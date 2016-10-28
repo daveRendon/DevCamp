@@ -12,20 +12,46 @@ The application is very simple; a CRUD based form with as few moving parts as po
 
 
 ## Getting prepared to deliver ##
-Working on a Windows machine is ok if you have Windows 10 Anniversary edition. This will allow you to show bash on Windows.
+1. It is recommended that the instructor works through the Hands-On-Labs for all three languages before the session.  Each one will take 
+approximately 3 hours, and will help you be ready to assist the attendees with any issues or language-specific questions.  The hands-on-labs are
+all done in the cloud, so all that is required for this part of the preparation is a laptop or workstation that can run Remote Desktop and access the
+Internet.
 
-It may be convenient to simply use the Azure-based VM in the resource group that the attendees will be using.  If you'd rather use
-your own local machine, you will need Visual Studio (at least the community edition) installed.  Also, install the Azure SDK and Azure storage explorer.
+* Azure subscription: 
+    To run the demos and perform the hands-on-labs, an Azure subscription is necessary.  You can sign up for a free 
+    trial (as the students do in the first lab), or you can use a paid subscription.  Keep in mind that all the resources
+    deployed for the hands-on-labs consume approx $10 of resources per day, so you will want to shut down virtual 
+    machines, etc. when not in use.
+
+* Workstation configuration: 
+    You can either use your local laptop/workstation for development and demo tasks, or you can use a Virtual Machine in 
+    Azure. These instructions will assume using the local laptop running Windows 10 Anniversary edition. This will allow 
+    you to show bash on Windows.
+    1. Install `Windows Sybsystem for Linux`, which supplies the bash command processor on windows.  
+    Go to control `panel/software/Turn Windows Features on or off`, and select `Windows Subsystem for Linux`:
+
+        ![image](./media/2016-10-28_14-51-30.png)
+
+    1. Install Visual Studio community edition from here: `https://www.visualstudio.com/vs/`.  
+    1. Install the Azure SDK from here: `https://azure.microsoft.com/en-us/downloads/`
+
+        ![image](./media/2016-10-28_14-58-13.png)
+
+    1. Install Azure Storage Explorer from `http://storageexplorer.com`.  Connect it to your azure subscription so 
+    you can show Azure Blobs and queues.
+
+    1.  Install the DevCamp Resource Group template, and deploy one of the `end` applications to one of the App services. 
 
 ---
 ## Module 0 - Introduction, roadmap and course overview ###
-In this session, we will provide a brief history of Azure, a quick overview of the capabilities available and introduction to the 2-day interactive workshop.
+In this session, we will provide a brief history of Azure, a quick overview of the capabilities available and 
+introduction to the 2-day interactive workshop.
 
 [View PowerPoint](Presentation/Module00-Overview.pptx?raw=true)
 
 **Goal:** This deck is marketing focused and is designed to provide a high-level overview of Azure. It is geared towards newcomers to the Microsoft cloud offerings.
 
-**Demos:** You can show the portal, and show the running application
+**Demos:** You can show the Azure portal, and show the DevCamp application
 
 **Session prep tips:** 
 * Review the latest Azure features.  Explain that there may be Azure changes since this content has been created.
@@ -59,7 +85,7 @@ There is no HOL for this module
 ---
 
 ## Module 1 - Tools and Developer Environment Setup Overview ####
-We will provide an overview of the developer tools available for developing on your platform.
+We will provide an overview of the developer tools available for developing on your platform, and set up the development resources for the DevCamp.
 
 [View PowerPoint](Presentation/Module01-DevTools.pptx?raw=true)
 

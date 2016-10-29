@@ -12,22 +12,28 @@ The application is very simple; a CRUD based form with as few moving parts as po
 
 
 ## Getting prepared to deliver ##
-1. It is recommended that the instructor works through the Hands-On-Labs for all three languages before the session.  Each one will take 
+* It is recommended that the instructor works through the Hands-On-Labs for all three languages before the session.  Each one will take 
 approximately 3 hours, and will help you be ready to assist the attendees with any issues or language-specific questions.  The hands-on-labs are
 all done in the cloud, so all that is required for this part of the preparation is a laptop or workstation that can run Remote Desktop and access the
 Internet.
 
 * Azure subscription: 
-    To run the demos and perform the hands-on-labs, an Azure subscription is necessary.  You can sign up for a free 
-    trial (as the students do in the first lab), or you can use a paid subscription.  Keep in mind that all the resources
-    deployed for the hands-on-labs consume approx $10 of resources per day, so you will want to shut down virtual 
-    machines, etc. when not in use.
+    To run the demos and perform the hands-on-labs, an Azure subscription is necessary.  You can sign up for a free trial (as the students do in the first lab), or you can use a paid subscription.  Keep in mind that all the resources deployed for the hands-on-labs consume approx $10 of resources per day, so you will want to shut down virtual machines, etc. when not in use.
+
+    Install the DevCamp Resource Group template, and deploy one of the `end` applications to one of the App services. 
+
+    Set up monitoring in AppInsights, so there will be some monitoring data by the time you show this feature
+
+    Create an OMS portal - you can set up a trial here: `https://www.microsoft.com/en-us/cloud-platform/operations-management-suite-trial`
 
 * Workstation configuration: 
     You can either use your local laptop/workstation for development and demo tasks, or you can use a Virtual Machine in 
     Azure. These instructions will assume using the local laptop running Windows 10 Anniversary edition. This will allow 
     you to show bash on Windows.
-    1. Install `Windows Sybsystem for Linux`, which supplies the bash command processor on windows.  
+    1. You will need PowerPoint installed to show the presentation slides. If you don't have PowerPoint, you can
+    use the free PowerPoint viewer available here: `https://www.microsoft.com/en-us/download/details.aspx?id=13`
+
+    1. Install `Windows Subsystem for Linux`, which supplies the bash command processor on windows.  
     Go to control `panel/software/Turn Windows Features on or off`, and select `Windows Subsystem for Linux`:
 
         ![image](./media/2016-10-28_14-51-30.png)
@@ -37,10 +43,14 @@ Internet.
 
         ![image](./media/2016-10-28_14-58-13.png)
 
-    1. Install Azure Storage Explorer from `http://storageexplorer.com`.  Connect it to your azure subscription so 
-    you can show Azure Blobs and queues.
+    1. Install Azure Storage Explorer from `http://storageexplorer.com`.  Connect it to your azure subscription so you can show Azure Blobs and queues.
 
-    1.  Install the DevCamp Resource Group template, and deploy one of the `end` applications to one of the App services. 
+    1. Prep Docker demo
+        * On Windows
+            * Make sure you have the Anniversary edition
+            * Activate the containers feature in Windows
+            * Download the beta tools [Windows](https://docs.docker.com/docker-for-windows/)
+
 
 ---
 ## Module 0 - Introduction, roadmap and course overview ###
@@ -94,7 +104,7 @@ We will provide an overview of the developer tools available for developing on y
 **Possible demos:** 
 * Demo 1: Visual Studio and Azure
     1. show ARM template
-    1. create a simple MVC application, publish it to Azure
+    1. create a simple MVC application, show the Azure publishing wizard
     1. show cloud explorer
     1. show git integration
 
@@ -117,8 +127,7 @@ We will provide an overview of the developer tools available for developing on y
 * There are lots of tools for making development in Azure easier.  Also, we don't force you to use our tools - you can use the technologies that you like.
 
 **Common questions:** 
-* Can I do development on my local machine?  Of course, we're just using an Azure based machine for convenience and 
-consistency.  If you would like to install the development components on your machine, that is fine.
+* Can I do development on my local machine?  Of course, we're just using an Azure based machine for convenience and consistency.  If you would like to install the development components on your machine, that is fine.
 
 **Watch out for:** 
 * Make sure all attendee development environments are set up
@@ -128,6 +137,7 @@ consistency.  If you would like to install the development components on your ma
 * Potential subscription setup issues - order of steps is important
 * If there are problems, we can use the azure passes we've allocated
 * If the attendee wants to use their own Azure subscription, that's ok but be aware of potential issues with O365 integration  
+
 **Tasks to complete**
 * Set up development environment
 
@@ -135,10 +145,9 @@ consistency.  If you would like to install the development components on your ma
 * It can take up to 20 minutes or more to deploy the resource group for development.
 
 **Possible issues**
-* No cell phone and/or Credit card for verification
-* If trials have already been created using that phone or credit card, the process may fail.  If so, deploy the azure pass. 
+* No cell phone and/or Credit card for verification - these are required for trial subscriptions.  If the attendee doesn't have them, let them use one of the Azure Passes.
+* If trials have already been created using that phone or credit card, the process may fail.  If so, give them an azure pass. 
 * If they have an existing subscription they'd like to use, that's fine but there may be issues with connectivity to O365.
-
 
 ----
 ##  Module 2 - Modern Cloud Apps Overview ####
@@ -150,26 +159,26 @@ We will provide an overview of some common cloud technologies, patterns and Azur
 
 **Demos:** 
     There are no predefined demos in this section, but feel free to
-1. show off the structure of the `start` code 
-1. pull up the `end` code and explain it
+1. Show off the structure of the `start` code 
+1. Pull up the `end` code and explain it
 
 **Session prep tips:**
     Run through the lab and understand the code
 
 **Key takeaways:**  
-* design of modern cloud apps for scalability
-* integration with Azure APIs using libraries or REST calls
+* Design of modern cloud apps for scalability
+* Integration with Azure APIs using libraries or REST calls
 
 **Common questions:** 
-* how does redis cache work?
+* How does redis cache work?
 
 **Watch out for:** 
-* environment variables need to be set up
+* Environment variables need to be set up
 
 ### HOL Proctoring ###
 
 **Tasks to complete**
-* load project into your IDE of choice
+* Load project into your IDE of choice
 
 **Exit criteria**
 * Integration of storage and cache into our application
@@ -213,6 +222,8 @@ stick with the `apps.dev.microsoft.com` portal for those tasks.
 
 **Tasks to complete**
 * Create application in the apps.dev.microsoft.com portal.
+* Add AAD support to the application
+* Retrive information from the graph API
 
 
 **Exit criteria**
@@ -229,17 +240,17 @@ We will provide an overview of Visual Studio Team Services (VSTS), DevOps concep
 [View PowerPoint](Presentation/Module04-DevOps.pptx?raw=true)
 
 **Goal:** 
-* explain VSTS devops setup
+* Explain VSTS devops setup
 
 **Demos:** 
-1. create new project in VSTS with git version con
-1. use link to open project in Visual Studio
-1. create C# MVC web app solution in Visual Studio
-1. commit & push
-1. show code in VSTS portal
-1. create build and publish steps
-1. show the application running in Azure
-*extra credit: make a change to the application, commit & push, and show the change (a few minutes later) running in the portal.
+1. Create new project in VSTS with git version con
+1. Use link to open project in Visual Studio
+1. Create C# MVC web app solution in Visual Studio
+1. Commit & push
+1. Show code in VSTS portal
+1. Create build and publish steps
+1. Show the application running in Azure
+1. For extra credit: make a change to the application, commit & push, and show the change (a few minutes later) running in the portal.
 
 **Session prep tips:**
 * Create an Azure web app to deploy the application to in the demo
@@ -275,6 +286,7 @@ We will provide an overview of Visual Studio Team Services (VSTS), DevOps concep
 Intro to Azure Resource manager and infrastructure as code.
 
 [View PowerPoint](Presentation/Module05-ARM-IAC.pptx?raw=true)
+
 **Goal:** 
 * Describe how Azure infrastructure can be managed just like program code.
 
@@ -282,16 +294,16 @@ Intro to Azure Resource manager and infrastructure as code.
 1. In Azure portal, show resource group, navigate to the template reverse engineering feature
 
 1. Within Visual Studio:
-    * create a resource group template
-    * add a virtual machine
-    * show JSON syntax
-    * show how you can deploy the resource group template
+    * Create a resource group template
+    * Add a virtual machine
+    * Show JSON syntax
+    * Show how you can deploy the resource group template
     
 1. Within Visual Studio, with template created above
-    * add DSC to the virtual machine 
-    * show DSC template
-    * uncomment the web server sample code
-    * run the template if you'd like
+    * Add DSC to the virtual machine 
+    * Show DSC template
+    * Uncomment the web server sample code
+    * Run the template if you'd like
 
 **Session prep tips:**
 * Have Azure and Visual Studio resources handy.
